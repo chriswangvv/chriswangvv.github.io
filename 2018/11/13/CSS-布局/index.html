@@ -105,15 +105,15 @@
 <pre><code>&lt;div id=&quot;main&quot;&gt;aaa&lt;/div&gt;
 
 #main {
-width: 600px;
-margin: 0 auto;
-background-color: #eeeeee;
+    width: 600px;
+    margin: 0 auto;
+    background-color: #eeeeee;
 }
 </code></pre><h5 id="max-width"><a href="#max-width" class="headerlink" title="max-width"></a>max-width</h5><p>在这种情况下使用 max-width 替代 width 可以使浏览器更好地处理小窗口的情况。这点在移动设备上显得尤为重要</p>
 <pre><code>#main {
-max-width: 600px;
-margin: 0 auto;
-background-color: #eeeeee;
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #eeeeee;
 }
 </code></pre><h4 id="例子-1"><a href="#例子-1" class="headerlink" title="例子"></a>例子</h4><h5 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h5><pre><code>.simple {
     width: 500px;
@@ -137,7 +137,7 @@ background-color: #eeeeee;
 <p> 一个固定定位元素不会保留它原本在页面应有的空隙（脱离文档流）</p>
 </li>
 <li><p>absolute<br> 与fixed表现类似，但不是相对于视窗 而是相对于最近的有position属性（非static）的祖先元素。如果绝对定位的元素没有非static的祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。</p>
-<h5 id="position-例子"><a href="#position-例子" class="headerlink" title="position 例子"></a>position 例子</h5> <div class="container"><br> <nav>menu</nav><br> <section>aaa</section><br> <section>aaa</section><br> <section>aaaa</section><br> </div><br> <div class="footer"><br> aaaaaaaaaaaaaaaaa<br> </div>
+<h5 id="position-例子"><a href="#position-例子" class="headerlink" title="position 例子"></a>position 例子</h5> <div class="container"><br>     <nav>menu</nav><br>     <section>aaa</section><br>     <section>aaa</section><br>     <section>aaaa</section><br> </div><br> <div class="footer"><br>     aaaaaaaaaaaaaaaaa<br> </div>
 
 <p> .container {</p>
 <pre><code>position: relative
@@ -242,21 +242,21 @@ nav {
 <ol>
 <li>简单的flex布局例子</li>
 </ol>
-<pre><code>&gt;     .container {
-      display: -webkit-flex;
-      display: flex;
-    }
-    nav {
-      width: 200px;
-    }
-    .flex-column {
-      -webkit-flex: 1;
-              flex: 1; // 右边充满
-    }
+<pre><code> .container {
+  display: -webkit-flex;
+  display: flex;
+}
+nav {
+  width: 200px;
+}
+.flex-column {
+  -webkit-flex: 1;
+          flex: 1; // 右边充满
+}
 </code></pre><ol start="2">
 <li>稍微复杂一点</li>
 </ol>
-<pre><code>  .container {
+<pre><code> .container {
   display: -webkit-flex;
   display: flex;
 }
