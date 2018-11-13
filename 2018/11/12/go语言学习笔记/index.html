@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="angular, spring boot">
+    <title>
+        chris&#39;s
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="./source/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function () {
+            $('.social-button').click(function () {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            chris&#39;s
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/chriswangvv">
+                        Github
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://blog.csdn.net/VLilyLUE">
+                        CSDN
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+        <h4 class="post-cat">
+            <a href="/categories/go/">
+                go
+            </a>
+        </h4>
+        
+            <h2 class="post-title">
+                go语言学习笔记
+            </h2>
+            <ul class="post-date">
+                <li>
+                    2018-11-12
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+            <div class="post-content">
+                <h4 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h4><ol>
+<li>源文件非注释第一行指明属于哪个包；每个go应用都包含一个名为main的包</li>
+<li>import “包名”;fmt 包实现了格式化 IO（输入/输出）的函数</li>
+<li>函数执行顺序：有init()函数则先执行init函数，没有则启动主函数（main()）</li>
+<li>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（相当于public）；标识符以小写字母开头，则只对包内可见可用（相当于protected）</li>
+</ol>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><p>左大括号不能单独放在一行</p>
+</li>
+<li><p>一行代表一个语句结束，不需要分号（如果多个语句写在一行则需要分号：不要这么写）</p>
+</li>
+<li><p>第一个字符必须是字母或下划线</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
+<li>布尔型</li>
+<li>数字型: 整型：int; 浮点型：float32 float64；（还有一些别的，我感觉暂时用不上）</li>
+<li>字符串：UTF-8</li>
+<li>派生类型：<ol>
+<li>指针类型（Pointer）</li>
+<li>数组类型</li>
+<li>结构化类型</li>
+<li>Channel类型</li>
+<li>函数类型</li>
+<li>切片类型</li>
+<li>接口类型</li>
+<li>Map类型</li>
+</ol>
+</li>
+</ol>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h5><p>var</p>
+<ol>
+<li>单个：<ol>
+<li>var name type</li>
+<li>var name = value</li>
+<li>name := value;(name不能被声明过、只能写在函数体内)</li>
+</ol>
+</li>
+<li>多个同上（个数必须得对应）（<em>并行</em>/<em>同时</em> 赋值）</li>
+</ol>
+<h5 id="值类型和引用类型"><a href="#值类型和引用类型" class="headerlink" title="值类型和引用类型"></a>值类型和引用类型</h5><ol>
+<li>所有基本类型（int float bool string）属于值类型</li>
+<li>&amp;i 来获取变量 i 的内存地址</li>
+</ol>
+<blockquote>
+<p>注意： </p>
+<ol>
+<li>这种因式分解关键字的写法一般用于声明全局变量<br>`<br>var (<pre><code>vname1 v_type1
+vname2 v_type2
+</code></pre>  )`</li>
+<li>声明的局部变量必须使用</li>
+<li>全局变量允许声明但不使用</li>
+<li>想要交换两个变量的值，则可以简单地使用 a, b = b, a，两个变量的类型必须是相同。</li>
+<li>空白标识符 _ 也被用于抛弃值，如值 5 在：_, b = 5, 7 中被抛弃。</li>
+<li><p>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。（这条没细看）</p>
+</li>
+<li><p>并行赋值也被用于当一个函数返回多个返回值时，比如这里的 val 和错误 err 是通过调用 Func1 函数同时得到：val, err = Func1(var1)。（这条没细看）</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><h5 id="常量基本用法"><a href="#常量基本用法" class="headerlink" title="常量基本用法"></a>常量基本用法</h5><ol>
+<li>声明常量<ol>
+<li>显式类型定义： const b string = “abc”</li>
+<li>隐式类型定义： const b = “abc”</li>
+</ol>
+</li>
+<li><p>可以用作枚举</p>
+<blockquote>
+<pre><code>const (
+    Unknown = 0
+    Female = 1
+    Male = 2    
+)
+</code></pre></blockquote>
+</li>
+<li><p>常量可以用len(), cap(), unsafe.Sizeof()函数计算表达式的值。常量表达式中函数必须是内置函数（搜go 内置函数）</p>
+<blockquote>
+<pre><code>const (
+    a = &quot;abc&quot;
+    b = len(a)
+    c = unsafe.Sizeof(a)
+)
+func main() {
+    printlin(a, b, c)//abc 3 16
+}
+</code></pre><p> 字符串类型在 go 里是个结构, 包含指向底层数组的指针和长度,这两部分每部分都是 8 个字节，所以所有字符串类型大小为 16 个字节。</p>
+</blockquote>
+</li>
+<li>如果同时声明多个常量，只赋值了第一个，那么下面的值会跟第一个一样<blockquote>
+<pre><code>const (
+    x          // 报错，没有赋值
+    z = &quot;yyy&quot;  // yyy
+    y          // yyy
+)
+</code></pre></blockquote>
+<h5 id="iota"><a href="#iota" class="headerlink" title="iota"></a>iota</h5>iota 特殊常量，一个可以被编译器修改的常量</li>
+</ol>
+<p>iota 在 const关键字出现时将被重置为 0，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。</p>
+<blockquote>
+<pre><code>const (
+    a = iota   //0
+    b  //1
+    c  //2
+    d = &quot;ha&quot;   //独立值，iota += 1
+    e  //&quot;ha&quot;   iota += 1
+    f = 100//iota +=1
+    g  //100  iota +=1
+    h = iota   //7,恢复计数
+    i  //8
+)
+</code></pre></blockquote>
+<p>注意：<br>此处例子涉及左移右移</p>
+<blockquote>
+<pre><code>const (
+    i=1&lt;&lt;iota   // i左移0位，不变
+    j=3&lt;&lt;iota   // 左移一位，变为二进制110，即6
+    k //左移 2 位,变为二进制 1100, 即 12;
+    l // 左移 3 位,变为二进制 11000,即 24
+)
+</code></pre></blockquote>
+<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>内置的运算符有： 算术运算符 关系运算符 逻辑运算符 位运算符 赋值运算符 其他运算符</p>
+<p>尽量不要使用for循环，可以使用函数式的some等循环，可读性高</p>
+<p>但是实际上，我们现在所了解的动态网页是在 JavaScript 引入了 XHR(XMLHttpRequest) 后才实现的，然后首先应用到 Microsoft Outlook 网络版、Gmail 和“Google 地图”等网络应用程序中。XHR 无需重新载入整个网页，即可更改网页的各个部分，包括游戏、地图、视频、在线用户调研等。这样，网络应用程序也因此变得更快速，响应也更及时</p>
+<p>网络程序员通常将 JavaScript、XHR、CSS 以及其他几种网络技术的强力组合称为 AJAX（异步 JavaScript 和 XML）。HTML 也在持续发展，新版 HTML 标准中不断加入新的功能和改进。</p>
+<p>web GL<br>3d css</p>
+
+            </div>
+</article>
+
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/go/">go</a></li></ul>
+
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li></ul>
+
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>Tags</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>
