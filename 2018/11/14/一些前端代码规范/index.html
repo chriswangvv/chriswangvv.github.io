@@ -133,18 +133,20 @@
 &lt;script src=&quot;code-guide.js&quot;&gt;&lt;/script&gt;
 </code></pre></blockquote>
 <h3 id="实用"><a href="#实用" class="headerlink" title="实用"></a>实用</h3><p>尽量遵循 HTML 标准和语义，但是不要以牺牲实用性为代价。任何时候都要尽量使用最少的标签并保持最小的复杂度</p>
-<h3 id="属性顺序"><a href="#属性顺序" class="headerlink" title="属性顺序"></a>属性顺序</h3></li>
+<h3 id="属性顺序"><a href="#属性顺序" class="headerlink" title="属性顺序"></a>属性顺序</h3><ol>
 <li>class</li>
 <li>id，name</li>
 <li>data-*</li>
 <li>src, for, type, href, value</li>
 <li>title, alt</li>
-<li>role, aria-*<h3 id="boolean型属性"><a href="#boolean型属性" class="headerlink" title="boolean型属性"></a>boolean型属性</h3>布尔型属性可以在声明时不赋值<br>元素的布尔型属性如果有值，就是 true，如果没有值，就是 false<br>如果一定要为其赋值的话，请参考 WhatWG 规范：<blockquote>
-<p>如果属性存在，其值必须是空字符串或 […] 属性的规范名称，并且不要在首尾添加空白符</p>
-</blockquote>
+<li>role, aria-*<h3 id="boolean型属性"><a href="#boolean型属性" class="headerlink" title="boolean型属性"></a>boolean型属性</h3>布尔型属性可以在声明时不赋值<br>元素的布尔型属性如果有值，就是 true，如果没有值，就是 false<br>如果一定要为其赋值的话，请参考 WhatWG 规范：</li>
+</ol>
 </li>
 </ol>
-<p>总之就是不用赋值</p>
+<blockquote>
+<p>如果属性存在，其值必须是空字符串或 […] 属性的规范名称，并且不要在首尾添加空白符</p>
+</blockquote>
+<p><strong>总之就是不用赋值</strong></p>
 <h3 id="减少标签的数量"><a href="#减少标签的数量" class="headerlink" title="减少标签的数量"></a>减少标签的数量</h3><p>尽量避免多余的父元素<br>    <!-- Not so great --><br>    <span class="avatar"><br>      <img src="..."><br>    </span></p>
 <pre><code>&lt;!-- Better --&gt;
 &lt;img class=&quot;avatar&quot; src=&quot;...&quot;&gt;
@@ -287,7 +289,7 @@
 <li><p>用<code>border: 0;</code> 代替 <code>border: none;</code></p>
 </li>
 </ol>
-<h3 id="声明顺序"><a href="#声明顺序" class="headerlink" title="声明顺序"></a>声明顺序</h3><p>相关的属性声明应当归为一组，顺序如下</p>
+<h3 id="声明顺序"><a href="#声明顺序" class="headerlink" title="声明顺序"></a>声明顺序</h3><p>相关的属性声明应当归为一组，顺序如下:</p>
 <ol>
 <li><p>Positioning</p>
 </li>
@@ -296,11 +298,11 @@
 <li><p>Typographic</p>
 </li>
 <li><p>Visual<br>例子：</p>
-<p> .declaration-order {<br>   /<em> Positioning </em>/<br>   position: absolute;<br>   top: 0;<br>   right: 0;<br>   bottom: 0;<br>   left: 0;<br>   z-index: 100;</p>
-<p>   /<em> Box-model </em>/<br>   display: block;<br>   float: right;<br>   width: 100px;<br>   height: 100px;</p>
-<p>   /<em> Typography </em>/<br>   font: normal 13px “Helvetica Neue”, sans-serif;<br>   line-height: 1.5;<br>   color: #333;<br>   text-align: center;</p>
-<p>   /<em> Visual </em>/<br>   background-color: #f5f5f5;<br>   border: 1px solid #e5e5e5;<br>   border-radius: 3px;</p>
-<p>   /<em> Misc </em>/<br>   opacity: 1;<br> }</p>
+<p>.declaration-order {<br>  /<em> Positioning </em>/<br>  position: absolute;<br>  top: 0;<br>  right: 0;<br>  bottom: 0;<br>  left: 0;<br>  z-index: 100;</p>
+<p>  /<em> Box-model </em>/<br>  display: block;<br>  float: right;<br>  width: 100px;<br>  height: 100px;</p>
+<p>  /<em> Typography </em>/<br>  font: normal 13px “Helvetica Neue”, sans-serif;<br>  line-height: 1.5;<br>  color: #333;<br>  text-align: center;</p>
+<p>  /<em> Visual </em>/<br>  background-color: #f5f5f5;<br>  border: 1px solid #e5e5e5;<br>  border-radius: 3px;</p>
+<p>  /<em> Misc </em>/<br>  opacity: 1;<br>}</p>
 </li>
 </ol>
 <h3 id="不要使用-import"><a href="#不要使用-import" class="headerlink" title="不要使用@import"></a>不要使用<code>@import</code></h3><p>与 <link> 标签相比，@import 指令要慢很多，不光增加了额外的请求次数，还会导致不可预料的问题。</p>
@@ -365,9 +367,12 @@
 <li><p>选择器要尽可能短，并且尽量限制组成选择器的元素个数，建议不要超过 3 。</p>
 </li>
 <li><p>只有在必要的时候才将 class 限制在最近的父元素内（也就是后代选择器）（例如，不使用带前缀的 class 时 – 前缀类似于命名空间）。</p>
-<h3 id="代码组织"><a href="#代码组织" class="headerlink" title="代码组织"></a>代码组织</h3></li>
-<li><p>以组件为单位组织代码段。</p>
+<h3 id="代码组织"><a href="#代码组织" class="headerlink" title="代码组织"></a>代码组织</h3><ol>
+<li>以组件为单位组织代码段。</li>
+</ol>
 </li>
+</ol>
+<ol start="2">
 <li><p>制定一致的注释规范。</p>
 </li>
 <li><p>使用一致的空白符将代码分隔成块，这样利于扫描较大的文档。</p>
