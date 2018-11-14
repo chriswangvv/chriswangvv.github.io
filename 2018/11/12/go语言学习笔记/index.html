@@ -183,15 +183,15 @@ func main() {
 </code></pre><p> 字符串类型在 go 里是个结构, 包含指向底层数组的指针和长度,这两部分每部分都是 8 个字节，所以所有字符串类型大小为 16 个字节。</p>
 </blockquote>
 </li>
-<li>如果同时声明多个常量，只赋值了第一个，那么下面的值会跟第一个一样<blockquote>
+<li><p>如果同时声明多个常量，只赋值了第一个，那么下面的值会跟第一个一样</p>
+<blockquote>
 <pre><code>const (
     x          // 报错，没有赋值
     z = &quot;yyy&quot;  // yyy
     y          // yyy
 )
 </code></pre></blockquote>
-<h5 id="iota"><a href="#iota" class="headerlink" title="iota"></a>iota</h5>iota 特殊常量，一个可以被编译器修改的常量</li>
-</ol>
+<h5 id="iota"><a href="#iota" class="headerlink" title="iota"></a>iota</h5><p>iota 特殊常量，一个可以被编译器修改的常量</p>
 <p>iota 在 const关键字出现时将被重置为 0，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。</p>
 <blockquote>
 <pre><code>const (
@@ -206,6 +206,8 @@ func main() {
     i  //8
 )
 </code></pre></blockquote>
+</li>
+</ol>
 <p>注意：<br>此处例子涉及左移右移</p>
 <blockquote>
 <pre><code>const (
@@ -245,7 +247,7 @@ func main() {
                         
     <h1>Tags</h1>
 
-    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li></ul>
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
 
                     </section>
                 </aside>

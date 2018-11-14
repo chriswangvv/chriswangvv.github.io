@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <meta name="keywords" content="angular, spring boot">
+    <title>
+        chris&#39;s
+    </title>
+    <!-- favicon -->
+    
+    <link rel="icon" href="./source/img/favicon.ico">
+    
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- highlight -->
+    <link rel="stylesheet" href="https://cdn.bootcss.com/highlight.js/9.12.0/styles/github-gist.min.css">
+    <script src="//cdn.bootcss.com/highlight.js/9.2.0/highlight.min.js"></script>
+    <script>
+        hljs.initHighlightingOnLoad()
+    </script>
+    <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.css">
+    <script src="https://cdn.jsdelivr.net/gh/frontendsophie/hexo-infinite-scroll@1.0.0/dist/hexo-infinite-scroll.min.js"></script>
+    <script>
+        infiniteScroll()
+
+        // for mobile menu
+        $(function () {
+            $('.social-button').click(function () {
+                if ($('.social-links').hasClass('hide-links')) {
+                    $('.social-links').removeClass('hide-links')
+                } else {
+                    $('.social-links').addClass('hide-links')
+                }
+            })
+        })
+    </script>
+</head>
+
+    <body style="background: url(https://cdn.jsdelivr.net/gh/frontendsophie/hexo-theme-autumn@1.0.0/source/img/button-bg.png) #f3f3f3">
+        <div class="container">
+            <header class="header">
+    <h1 class="title">
+        <a href="/" class="logo">
+            chris&#39;s
+        </a>
+    </h1>
+    <h2 class="desc">
+        
+    </h2>
+
+    <nav class="links">
+        <button class="social-button">
+            menu
+        </button>
+        <ul class="social-links hide-links">
+            
+                <li>
+                    <a href="https://github.com/chriswangvv">
+                        Github
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="https://blog.csdn.net/VLilyLUE">
+                        CSDN
+                    </a>
+                </li>
+                
+        </ul>
+    </nav>
+</header>
+                <main class="main">
+                    <article class="post">
+    
+            <h2 class="post-title">
+                正则表达式入门
+            </h2>
+            <ul class="post-date">
+                <li>
+                    2018-11-13
+                </li>
+                <li>
+                    
+                </li>
+            </ul>
+            <div class="post-content">
+                <ol>
+<li><p>在一篇英文里找<code>hi</code>： <code>\bhi\b</code>。</p>
+<p> \b是正则表达式规定的一个特殊代码（元字符，metacharacter），代表着单词的开头或结尾，也就是单词的分界处。</p>
+<p> 虽然通常英文的单词是由空格，标点符号或者换行来分隔的，但是\b并不匹配这些单词分隔字符中的任何一个，它只匹配<strong>一个位置</strong></p>
+</li>
+<li><p>hi后面不远处跟着一个Lucy：<code>\bhi\b.*\bLucy\b</code></p>
+<p> <code>.</code>匹配除了换行符以外的任意字符</p>
+<p> <code>*</code>指定<code>*</code>前边的内容可以连续重复使用任意次以使整个表达式得到匹配</p>
+<p> 所以，<code>.*</code>表示 任意数量的不包含换行的字符</p>
+<p> 所以，这句话的意思是：先是一个单词hi,然后是任意个任意字符(但不能是换行)，最后是Lucy这个单词</p>
+</li>
+<li><p>匹配中国固定电话号码：<code>0\d\d-\d\d\d\d\d\d\d\d</code></p>
+<p> <code>\d</code> 匹配一位数字</p>
+<p> <code>-</code>不是元字符，只匹配它本身</p>
+<p> 可缩写为 <code>0\d{2}-\d{8}</code></p>
+<p> 这里\d后面的{2}({8})的意思是前面\d必须连续重复匹配2次(8次)</p>
+</li>
+<li><p>填写的QQ号必须为5位到12位数字时：<code>^\d{5,12}$</code></p>
+<p>  {2}匹配只能不多不少重复2次，{5,12}则是重复的次数不能少于5次，不能多于12次，否则都不匹配。</p>
+</li>
+<li><p>一些元字符</p>
+<ol>
+<li><code>.</code>匹配除了换行符以外的任意字符</li>
+<li><code>\w</code>匹配字母或数字或下划线或汉字等</li>
+<li><code>\s</code>匹配任意的空白符，包括空格，制表符(Tab)，换行符，中文全角空格等</li>
+<li><code>\d</code> 匹配一位数字</li>
+<li><code>\b</code>    匹配单词的开始或结束</li>
+<li><code>^</code>  匹配字符串的开始</li>
+<li><code>$</code>  匹配字符串的结束</li>
+</ol>
+</li>
+<li><p>重复的方式</p>
+<ol>
+<li><code>*</code>：重复零次或更多次</li>
+<li><code>+</code>：重复一次或更多次</li>
+<li><code>?</code>：重复零次或一次</li>
+<li><code>{n}</code>：重复n次</li>
+<li><code>{n,}</code>：重复n次或更多次</li>
+<li><code>{n,m}</code>： 重复n次到m次</li>
+</ol>
+</li>
+<li>字符转义： <code>\</code></li>
+<li><p>字符类</p>
+<ol>
+<li><p>定义：如果你想匹配没有预定义元字符的字符集合(比如元音字母a,e,i,o,u)，只需要在方括号里列出它们就行了：<code>[aeiou]</code> 匹配任何一个英文元音字母，<code>[.?!]</code>匹配标点符号(.或?或!)</p>
+</li>
+<li><p><code>[0-9]</code>代表的含意与\d就是完全一致的：一位数字</p>
+</li>
+<li><p><code>[a-z0-9A-Z_]</code>也完全等同于\w（如果只考虑英文的话）</p>
+</li>
+<li><p>例子：<code>\(?0\d{2}[) -]?\d{8}</code></p>
+<p> 这个表达式可以匹配几种格式的电话号码，像(010)88886666，或022-22334455，或02912345678等。我们对它进行一些分析吧：首先是一个转义字符(,它能出现0次或1次(?),然后是一个0，后面跟着2个数字(\d{2})，然后是)或-或空格中的一个，它出现1次或不出现(?)，最后是8个数字(\d{8})。</p>
+</li>
+</ol>
+</li>
+<li><p>分枝条件 （从这里开始没有细看）</p>
+<ol>
+<li>正则表达式里的分枝条件指的是有几种规则，如果满足其中任意一种规则都应该当成匹配，具体方法是用|把不同的规则分隔开</li>
+<li><code>0\d{2}-\d{8}|0\d{3}-\d{7}</code>：能匹配两种以连字号分隔的电话号码：一种是三位区号，8位本地号(如010-12345678)，一种是4位区号，7位本地号(0376-2233445)。</li>
+<li><code>\(0\d{2}\)[- ]?\d{8}|0\d{2}[- ]?\d{8}</code>：匹配3位区号的电话号码，其中区号可以用小括号括起来，也可以不用，区号与本地号间可以用连字号或空格间隔，也可以没有间隔。你可以试试用分枝条件把这个表达式扩展成也支持4位区号的。</li>
+<li><code>\d{5}-\d{4}|\d{5}</code>：用于匹配美国的邮政编码。美国邮编的规则是5位数字，或者用连字号间隔的9位数字。之所以要给出这个例子是因为它能说明一个问题：使用分枝条件时，要注意各个条件的顺序。如果你把它改成\d{5}|\d{5}-\d{4}的话，那么就只会匹配5位的邮编(以及9位邮编的前5位)。原因是匹配分枝条件时，将会从左到右地测试每个条件，如果满足了某个分枝的话，就不会去再管其它的条件了。</li>
+</ol>
+</li>
+<li>分组<ol>
+<li>重复多个字符，用小括号来指定<strong>子表达式</strong>（也叫分组），然后指定子表达式的重复次数，或者对子表达式进行其他操作</li>
+<li><code>(\d{1,3}\.){3}\d{1,3}</code>是一个简单的IP地址匹配表达式。<code>\d{1,3}</code>匹配1到3位的数字，<code>(\d{1,3}\.){3}</code>匹配三位数字加上一个英文句号(这个整体也就是这个分组)重复3次，最后再加上一个一到三位的数字(<code>\d{1,3}</code>)。</li>
+<li>但是，它也将匹配256.300.888.999这种不可能存在的IP地址。如果能使用算术比较的话，或许能简单地解决这个问题，但是正则表达式中并不提供关于数学的任何功能，所以只能使用冗长的分组，选择，字符类来描述一个正确的IP地址：<code>((2[0-4]\d|25[0-5]|[01]?\d\d?)\.){3}(2[0-4]\d|25[0-5]|[01]?\d\d?)</code></li>
+</ol>
+</li>
+<li>反义<ol>
+<li><code>\W</code>：匹配任意不是字母数字下划线汉字的字符</li>
+<li><code>\S</code>：匹配任意不是空白符的字符</li>
+<li><code>\D</code>：匹配任意非数字的字符</li>
+<li><code>\B</code>：匹配不是单词开头或结束的位置</li>
+<li><code>[^x]</code>：匹配除了x以外的任意字符</li>
+<li><code>[^aeiou]</code>：匹配除了aeiou以外的任意字符</li>
+<li>例子：<ol>
+<li><code>\S+</code>匹配不包含空白符的字符串。</li>
+<li><code>&lt;a[^&gt;]+&gt;</code>匹配用尖括号括起来的以a开头的字符串。</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>后向引用<br>1. </li>
+<li>零宽断言</li>
+<li>负向零宽断言</li>
+<li>注释</li>
+<li>贪婪与懒惰</li>
+<li>处理选项</li>
+<li>平衡组/递归匹配</li>
+</ol>
+
+            </div>
+</article>
+
+                </main>
+                <aside class="aside">
+                    <section class="aside-section">
+                        
+    <h1>Categories</h1>
+
+    <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/css/">css</a></li><li class="category-list-item"><a class="category-list-link" href="/categories/go/">go</a></li></ul>
+
+                    </section>
+                    <section class="aside-section">
+                        
+    <h1>Archives</h1>
+
+    <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2018/">2018</a></li></ul>
+
+
+                    </section>
+                    <section class="aside-section tag">
+                        
+    <h1>Tags</h1>
+
+    <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/css/">css</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/go/">go</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/正则表达式/">正则表达式</a></li></ul>
+
+                    </section>
+                </aside>
+        </div>
+    </body>
+
+</html>
