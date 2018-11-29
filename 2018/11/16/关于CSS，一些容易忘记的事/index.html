@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="web, CSS, JavaScript, js, 前端, Angular">
+  <meta name="keywords" content="CSS,">
 
 
 
@@ -79,17 +79,18 @@
 
 
 
-<meta name="description" content="前端小白/Angular">
+<meta name="description" content="基本 选择器权重 内联样式，如 style = &amp;quot;&amp;quot;,权值为1000 ID选择器，如 #content,权值为100 类、伪类和属性选择器，如 .content,权值为10 类型选择器和伪元素选择器，如 div p,权值为1   优先级 权值相等时，后出现的样式覆盖先出现的样式表设置 创作者的规则高于浏览者 继承的 CSS 样式不如后来指定的 CSS 样式 在同一组属性设置中标">
+<meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于HTTP接口设计">
-<meta property="og:url" content="http://yoursite.com/2018/11/15/关于HTTP接口设计/index.html">
+<meta property="og:title" content="关于CSS，一些容易忘记的事">
+<meta property="og:url" content="http://yoursite.com/2018/11/16/关于CSS，一些容易忘记的事/index.html">
 <meta property="og:site_name" content="Chris的博客">
-<meta property="og:description" content="前端小白/Angular">
+<meta property="og:description" content="基本 选择器权重 内联样式，如 style = &amp;quot;&amp;quot;,权值为1000 ID选择器，如 #content,权值为100 类、伪类和属性选择器，如 .content,权值为10 类型选择器和伪元素选择器，如 div p,权值为1   优先级 权值相等时，后出现的样式覆盖先出现的样式表设置 创作者的规则高于浏览者 继承的 CSS 样式不如后来指定的 CSS 样式 在同一组属性设置中标">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-20T05:55:36.258Z">
+<meta property="og:updated_time" content="2018-11-16T06:50:11.451Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="关于HTTP接口设计">
-<meta name="twitter:description" content="前端小白/Angular">
+<meta name="twitter:title" content="关于CSS，一些容易忘记的事">
+<meta name="twitter:description" content="基本 选择器权重 内联样式，如 style = &amp;quot;&amp;quot;,权值为1000 ID选择器，如 #content,权值为100 类、伪类和属性选择器，如 .content,权值为10 类型选择器和伪元素选择器，如 div p,权值为1   优先级 权值相等时，后出现的样式覆盖先出现的样式表设置 创作者的规则高于浏览者 继承的 CSS 样式不如后来指定的 CSS 样式 在同一组属性设置中标">
 
 
 
@@ -119,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/15/关于HTTP接口设计/">
+  <link rel="canonical" href="http://yoursite.com/2018/11/16/关于CSS，一些容易忘记的事/">
 
 
 
 
 
-  <title>关于HTTP接口设计 | Chris的博客</title>
+  <title>关于CSS，一些容易忘记的事 | Chris的博客</title>
   
 
 
@@ -252,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/15/关于HTTP接口设计/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/16/关于CSS，一些容易忘记的事/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chris">
@@ -269,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">关于HTTP接口设计</h1>
+          <h1 class="post-title" itemprop="name headline">关于CSS，一些容易忘记的事</h1>
         
 
         <div class="post-meta">
@@ -281,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-15T14:16:38+08:00">
-                2018-11-15
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-16T13:42:44+08:00">
+                2018-11-16
               </time>
             
 
@@ -291,6 +292,28 @@
             
           </span>
 
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/CSS/" itemprop="url" rel="index">
+                    <span itemprop="name">CSS</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
           
 
           
@@ -319,7 +342,76 @@
       
 
       
-        
+        <h2 id="基本"><a href="#基本" class="headerlink" title="基本"></a>基本</h2><ol>
+<li>选择器权重<ol>
+<li>内联样式，如 <code>style = &quot;&quot;</code>,权值为1000</li>
+<li>ID选择器，如 <code>#content</code>,权值为100</li>
+<li>类、伪类和属性选择器，如 <code>.content</code>,权值为10</li>
+<li>类型选择器和伪元素选择器，如 <code>div p</code>,权值为1</li>
+</ol>
+</li>
+<li>优先级<ol>
+<li>权值相等时，后出现的样式覆盖先出现的样式表设置</li>
+<li>创作者的规则高于浏览者</li>
+<li>继承的 CSS 样式不如后来指定的 CSS 样式</li>
+<li>在同一组属性设置中标有<code>!important</code>规则的优先级最大</li>
+</ol>
+</li>
+</ol>
+<h2 id="动画"><a href="#动画" class="headerlink" title="动画"></a>动画</h2><ol>
+<li><code>@keyframes</code>规则内指定一个 CSS样式和动画将逐步从目前的样式更改为新的样式。</li>
+</ol>
+<h2 id="边框"><a href="#边框" class="headerlink" title="边框"></a>边框</h2><ul>
+<li><code>border-radius</code></li>
+<li><code>box-shadow</code></li>
+<li><code>border-images</code></li>
+</ul>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><ul>
+<li><code>background-size</code><ul>
+<li>以像素或百分比规定尺寸。如果以百分比规定尺寸，那么尺寸相对于父元素的宽度和高度</li>
+</ul>
+</li>
+<li><code>background-origin</code></li>
+</ul>
+<h2 id="字体"><a href="#字体" class="headerlink" title="字体"></a>字体</h2><p><code>@font-face</code></p>
+<pre><code>@font-face {
+font-family: &apos;FontAwesome&apos;;
+src: url(&apos;fonts/fontawesome-webfont.woff&apos;);
+}
+</code></pre><h2 id="多列"><a href="#多列" class="headerlink" title="多列"></a>多列</h2><ul>
+<li>column-count: 指定元素的列数</li>
+<li>column-rule： 列之间的宽度 样式 颜色</li>
+<li>column-gap： 列之间的差距</li>
+</ul>
+<h2 id="UI"><a href="#UI" class="headerlink" title="UI"></a>UI</h2><ul>
+<li>resize</li>
+<li>box-sizing</li>
+<li>outline-offset</li>
+</ul>
+<h2 id="过渡效果"><a href="#过渡效果" class="headerlink" title="过渡效果"></a>过渡效果</h2><ul>
+<li>transition-property   // 应用过渡的css属性的名称</li>
+<li>transition-duration   // 过渡效果花费的时间</li>
+<li>transition-timing-function // 规定过渡效果的时间曲线。默认是 “ease”</li>
+<li>transition-delay</li>
+</ul>
+<h2 id="文本效果"><a href="#文本效果" class="headerlink" title="文本效果"></a>文本效果</h2><ul>
+<li>text-shadow</li>
+<li>word-wrap</li>
+</ul>
+<h2 id="2D转换"><a href="#2D转换" class="headerlink" title="2D转换"></a>2D转换</h2><ul>
+<li>translate()</li>
+<li>rotate()</li>
+<li>scale()</li>
+<li>skew()</li>
+<li>matrix()</li>
+</ul>
+<h2 id="3D转换"><a href="#3D转换" class="headerlink" title="3D转换"></a>3D转换</h2><ul>
+<li>rotateX()</li>
+<li>rotateY()</li>
+<li>rotateZ()</li>
+<li>rotate3d(x,y,z,a)</li>
+</ul>
+
       
     </div>
     
@@ -334,6 +426,12 @@
 
     <footer class="post-footer">
       
+        <div class="post-tags">
+          
+            <a href="/tags/CSS/" rel="tag"># CSS</a>
+          
+        </div>
+      
 
       
       
@@ -343,8 +441,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/14/一些前端代码规范/" rel="next" title="一些前端代码规范">
-                <i class="fa fa-chevron-left"></i> 一些前端代码规范
+              <a href="/2018/11/16/js学习笔记-基础/" rel="next" title="js学习笔记-基础">
+                <i class="fa fa-chevron-left"></i> js学习笔记-基础
               </a>
             
           </div>
@@ -353,8 +451,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/11/16/js学习笔记-基础/" rel="prev" title="js学习笔记-基础">
-                js学习笔记-基础 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/11/21/看新闻学英语/" rel="prev" title="看新闻学英语(...)">
+                看新闻学英语(...) <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -407,8 +505,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -468,6 +575,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#基本"><span class="nav-number">1.</span> <span class="nav-text">基本</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动画"><span class="nav-number">2.</span> <span class="nav-text">动画</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#边框"><span class="nav-number">3.</span> <span class="nav-text">边框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#背景"><span class="nav-number">4.</span> <span class="nav-text">背景</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#字体"><span class="nav-number">5.</span> <span class="nav-text">字体</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#多列"><span class="nav-number">6.</span> <span class="nav-text">多列</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UI"><span class="nav-number">7.</span> <span class="nav-text">UI</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#过渡效果"><span class="nav-number">8.</span> <span class="nav-text">过渡效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#文本效果"><span class="nav-number">9.</span> <span class="nav-text">文本效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2D转换"><span class="nav-number">10.</span> <span class="nav-text">2D转换</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3D转换"><span class="nav-number">11.</span> <span class="nav-text">3D转换</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
