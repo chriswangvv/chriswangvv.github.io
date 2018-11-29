@@ -1,0 +1,888 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="js,数组,ES5,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="数组Array.prototype方法的使用  在ES5中，一共有九个Array方法:  Array.prototype.indexOf   Array.prototype.lastIndexOf   Array.prototype.every   Array.prototype.some   Array.prototype.forEach   Array.prototype.map   Arra">
+<meta name="keywords" content="js,数组,ES5">
+<meta property="og:type" content="article">
+<meta property="og:title" content="数组Array.prototype方法的使用">
+<meta property="og:url" content="http://yoursite.com/2018/11/29/数组Array-prototype方法的使用/index.html">
+<meta property="og:site_name" content="Chris的博客">
+<meta property="og:description" content="数组Array.prototype方法的使用  在ES5中，一共有九个Array方法:  Array.prototype.indexOf   Array.prototype.lastIndexOf   Array.prototype.every   Array.prototype.some   Array.prototype.forEach   Array.prototype.map   Arra">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-11-29T08:18:26.056Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="数组Array.prototype方法的使用">
+<meta name="twitter:description" content="数组Array.prototype方法的使用  在ES5中，一共有九个Array方法:  Array.prototype.indexOf   Array.prototype.lastIndexOf   Array.prototype.every   Array.prototype.some   Array.prototype.forEach   Array.prototype.map   Arra">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/11/29/数组Array-prototype方法的使用/">
+
+
+
+
+
+  <title>数组Array.prototype方法的使用 | Chris的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chris的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">做一个知识驱动的人</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/29/数组Array-prototype方法的使用/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chris的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">数组Array.prototype方法的使用</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-29T13:49:48+08:00">
+                2018-11-29
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/ES/" itemprop="url" rel="index">
+                    <span itemprop="name">ES</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="数组Array-prototype方法的使用"><a href="#数组Array-prototype方法的使用" class="headerlink" title="数组Array.prototype方法的使用"></a>数组Array.prototype方法的使用</h2><p>  在ES5中，一共有九个Array方法:</p>
+<ul>
+<li>Array.prototype.indexOf</li>
+</ul>
+<ul>
+<li>Array.prototype.lastIndexOf</li>
+</ul>
+<ul>
+<li>Array.prototype.every</li>
+</ul>
+<ul>
+<li>Array.prototype.some</li>
+</ul>
+<ul>
+<li>Array.prototype.forEach</li>
+</ul>
+<ul>
+<li>Array.prototype.map</li>
+</ul>
+<ul>
+<li>Array.prototype.filter</li>
+</ul>
+<ul>
+<li>Array.prototype.reduce</li>
+</ul>
+<ul>
+<li>Array.prototype.reduceRight</li>
+</ul>
+<h3 id="indexOf"><a href="#indexOf" class="headerlink" title="indexOf()"></a>indexOf()</h3><p>  返回在该数组中第一个找到的元素的位置，如果不存在则返回-1</p>
+<pre><code>arr.indexOf(&apos;wrr&apos;)
+</code></pre><h3 id="lastIndexOf"><a href="#lastIndexOf" class="headerlink" title="lastIndexOf()"></a>lastIndexOf()</h3><p>  返回在该数组中最后一个找到的元素的位置，如果不存在则返回-1<br>（可以用这两个判断是否有重复元素吧）</p>
+<h3 id="every"><a href="#every" class="headerlink" title="every()"></a>every()</h3><p>  检测数组中每一项是否符合条件</p>
+<pre><code>let arr1 = [1, 2, 51, 98]
+let result = arr1.every(function(item，index) { // index: 索引; item： 值
+    return item &gt; 0
+})
+</code></pre><h3 id="some"><a href="#some" class="headerlink" title="some()"></a>some()</h3><p>  检测数组中是否有某一项符合条件</p>
+<pre><code>var result0 = arr.some(function(item, index) {
+    return item &lt; 0
+})
+</code></pre><blockquote>
+<p>相对比于用for循环来写，确实用every和some代码更简介语法更明确</p>
+</blockquote>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach()"></a>forEach()</h3><p>  为每个元素执行对应的方法</p>
+<pre><code>arr.forEach(function(item, index) {
+    console.log(index, item)
+})
+</code></pre><p>  <strong>用来替换for循环</strong></p>
+<h3 id="map"><a href="#map" class="headerlink" title="map()"></a>map()</h3><p>  对数组的每个元素进行一定操作（映射）后，会返回一个新的数组</p>
+<p>  <strong>map()是处理服务器返回数据时是一个非常实用的函数。</strong></p>
+<p>  用for循环：</p>
+<pre><code>function getNewArr() {
+    var newArr = [];
+    for (var i = 0; i &lt; oldArr.length; i++) {
+        var item = oldArr[i];
+        item.full_name = [item.first_name, item.last_name].join(&quot; &quot;)
+        newArr[i] = item
+    }
+    return newArr
+}
+</code></pre><p>  不用for循环：</p>
+<pre><code>function getNewArr() {
+    return oldArr.map(function(item, index) {
+        item.full_name = [item.first_name, item.last_name].join(&quot; &quot;)
+        return item
+    })
+}
+</code></pre><h3 id="filter"><a href="#filter" class="headerlink" title="filter()"></a>filter()</h3><p>  创建一个新的匹配过滤条件的数组</p>
+<pre><code>const arr0 = arr.filter(function(item, index) {
+    return item.name === &quot;orange&quot;
+})
+</code></pre><h3 id="reduce"><a href="#reduce" class="headerlink" title="reduce()**"></a>reduce()**</h3><p>  可以实现一个累加器的功能，将数组的每个值（从左到右）将其降低到一个值</p>
+<p>  实例： 输出数组中元素出现了几次</p>
+<p>  for循环：</p>
+<pre><code>function getWordCnt() {
+    var obj = []
+    for (var i = 0; i &lt; arr.length; i++) {
+        var item = arr[i]
+        obj[item] = (obj[item] + 1) || 1
+    }
+    return obj
+}
+</code></pre><p>   reduce：</p>
+<pre><code>function passValue() {
+    return arr.reduce(function(prev, next) {
+        prev[next] = prev[next] + 1 || 1
+        return prev
+    }, {})
+}
+</code></pre><h3 id="reduceRight"><a href="#reduceRight" class="headerlink" title="reduceRight()"></a>reduceRight()</h3><p>  reduceRight的语法以及回调函数的规则和reduce方法是一样的，区别就是在与reduce是升序，即角标从0开始，而reduceRight是降序，即角标从arr.length-1开始</p>
+<p>  方法可应用于字符串 </p>
+<p>  实例：字符串倒序</p>
+<pre><code>window.onload = function () {
+    var result = [].reduceRight.call(word, appenToArray, &quot;the &quot;)
+    console.log(result) // the computer
+}
+
+var word = &quot;retupmoc&quot;
+
+function appendToArray(previousValue, currentVAlue){
+    return previousValue + currentValue
+}
+</code></pre><h3 id="isArray"><a href="#isArray" class="headerlink" title="isArray()"></a>isArray()</h3><p>  Array对象的一个静态函数，用来判断一个对象是不是数组</p>
+<pre><code>Array.isArray(arr)
+</code></pre><h2 id="备注"><a href="#备注" class="headerlink" title="备注"></a>备注</h2><h3 id="检测数组中每一项是否符合条件-和-检测数组中是否有某一项符合条件"><a href="#检测数组中每一项是否符合条件-和-检测数组中是否有某一项符合条件" class="headerlink" title="检测数组中每一项是否符合条件 和 检测数组中是否有某一项符合条件"></a>检测数组中每一项是否符合条件 和 检测数组中是否有某一项符合条件</h3><p>用for循环来做：</p>
+<ol>
+<li>检测数组中每一项是否符合条件：是否全部大于0</li>
+</ol>
+<pre><code>var ary = [12,23,24,42,1];
+var result = function(){
+    for (var i = 0; i &lt; ary.length; i++) {
+        if(ary[i] &lt; 0){
+           return false;
+        }
+      }
+      return true; //需全部满足
+}
+</code></pre><ol start="2">
+<li>检测数组中是否有某一项符合条件：是否存在小于0的项</li>
+</ol>
+<pre><code>var ary = [12,23,-24,42,1];
+var result = function(){
+    for (var i = 0; i &lt; ary.length; i++) {
+        if(ary[i] &lt; 0){
+               return true;
+        }
+      }
+      return false; //只需满足一个
+}
+</code></pre><h3 id="forEach-和map-的区别"><a href="#forEach-和map-的区别" class="headerlink" title="forEach()和map()的区别"></a>forEach()和map()的区别</h3><ul>
+<li><p>语法：forEach和map都支持2个参数：一个是回调函数（item,index,list）和上下文；</p>
+<ol>
+<li><p>forEach：</p>
+<pre><code>1. 用来遍历数组中的每一项；
+
+2. 这个方法执行是没有返回值的，对原来数组也没有影响；
+
+3. 数组中有几项，那么传递进去的匿名回调函数就需要执行几次；
+
+4. 每一次执行匿名函数的时候，还给其传递了三个参数值：数组中的当前项item,当前项的索引index,原始数组list；
+
+5. 理论上这个方法是没有返回值的，仅仅是遍历数组中的每一项，不对原来数组进行修改；但是我们可以自己通过数组的索引来修改原来的数组；
+
+6. forEach方法中的this是ary,匿名回调函数中的this默认是window
+
+     var arr = [12, 23, 24, 42, 1];
+     var res = arr.forEach(function(item, index, input) {
+         input[index] = item * 10
+     })
+     console.log(res) // undefined
+     console.log(arr) // [120, 230, 240, 420, 10]
+</code></pre></li>
+</ol>
+</li>
+</ul>
+<ul>
+<li><p>区别</p>
+<ol>
+<li><p>map:</p>
+<pre><code>1. map的回调函数中支持return返回值；return的是啥，相当于把数组中的这一项变为啥（**并不影响原来的数组**，只是相当于把原数组克隆一份，把克隆的这一份的数组中的对应项改变了）；
+</code></pre></li>
+</ol>
+</li>
+</ul>
+<pre><code>var res = arr.map(function(item, index, input) {
+    return item * 10
+})
+console.log(res) // [120, 230, 240, 420, 10]
+console.log(arr) // [12, 23, 24, 42, 1]
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/数组/" rel="tag"># 数组</a>
+          
+            <a href="/tags/ES5/" rel="tag"># ES5</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/ES6扩展运算符/" rel="next" title="ES6扩展运算符...">
+                <i class="fa fa-chevron-left"></i> ES6扩展运算符...
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chris</p>
+              <p class="site-description motion-element" itemprop="description">前端小白/Angular</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#数组Array-prototype方法的使用"><span class="nav-number">1.</span> <span class="nav-text">数组Array.prototype方法的使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#indexOf"><span class="nav-number">1.1.</span> <span class="nav-text">indexOf()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lastIndexOf"><span class="nav-number">1.2.</span> <span class="nav-text">lastIndexOf()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#every"><span class="nav-number">1.3.</span> <span class="nav-text">every()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#some"><span class="nav-number">1.4.</span> <span class="nav-text">some()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach"><span class="nav-number">1.5.</span> <span class="nav-text">forEach()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#map"><span class="nav-number">1.6.</span> <span class="nav-text">map()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#filter"><span class="nav-number">1.7.</span> <span class="nav-text">filter()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduce"><span class="nav-number">1.8.</span> <span class="nav-text">reduce()**</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#reduceRight"><span class="nav-number">1.9.</span> <span class="nav-text">reduceRight()</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#isArray"><span class="nav-number">1.10.</span> <span class="nav-text">isArray()</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#备注"><span class="nav-number">2.</span> <span class="nav-text">备注</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#检测数组中每一项是否符合条件-和-检测数组中是否有某一项符合条件"><span class="nav-number">2.1.</span> <span class="nav-text">检测数组中每一项是否符合条件 和 检测数组中是否有某一项符合条件</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#forEach-和map-的区别"><span class="nav-number">2.2.</span> <span class="nav-text">forEach()和map()的区别</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
