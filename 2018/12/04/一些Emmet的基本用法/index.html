@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="HTML,">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="整理自官方文档 缩写是Emmet工具包的核心 我们写别的代码的时候，为了提高可读性（之类的）需要在元素与元素之间加空格，但是在emmet中空格是停止符号，所以不必加 缩略语例子： #page&amp;gt;div.logo+ul#navigation&amp;gt;li*5&amp;gt;a{Item $} 生成： &amp;lt;div id=&amp;quot;page&amp;quot;&amp;gt;     &amp;lt;div class=&amp;qu">
+<meta name="keywords" content="HTML">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些Emmet的基本用法">
+<meta property="og:url" content="http://yoursite.com/2018/12/04/一些Emmet的基本用法/index.html">
+<meta property="og:site_name" content="Chris的博客">
+<meta property="og:description" content="整理自官方文档 缩写是Emmet工具包的核心 我们写别的代码的时候，为了提高可读性（之类的）需要在元素与元素之间加空格，但是在emmet中空格是停止符号，所以不必加 缩略语例子： #page&amp;gt;div.logo+ul#navigation&amp;gt;li*5&amp;gt;a{Item $} 生成： &amp;lt;div id=&amp;quot;page&amp;quot;&amp;gt;     &amp;lt;div class=&amp;qu">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-04T06:20:19.807Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些Emmet的基本用法">
+<meta name="twitter:description" content="整理自官方文档 缩写是Emmet工具包的核心 我们写别的代码的时候，为了提高可读性（之类的）需要在元素与元素之间加空格，但是在emmet中空格是停止符号，所以不必加 缩略语例子： #page&amp;gt;div.logo+ul#navigation&amp;gt;li*5&amp;gt;a{Item $} 生成： &amp;lt;div id=&amp;quot;page&amp;quot;&amp;gt;     &amp;lt;div class=&amp;qu">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/04/一些Emmet的基本用法/">
+
+
+
+
+
+  <title>一些Emmet的基本用法 | Chris的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chris的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">做一个知识驱动的人</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/04/一些Emmet的基本用法/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chris的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一些Emmet的基本用法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-04T10:28:50+08:00">
+                2018-12-04
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
+                  <a href="/categories/其他（相关）/" itemprop="url" rel="index">
+                    <span itemprop="name">其他（相关）</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>整理自<a href="https://docs.emmet.io/abbreviations/" target="_blank" rel="noopener">官方文档</a></p>
+<p>缩写是Emmet工具包的核心</p>
+<p>我们写别的代码的时候，为了提高可读性（之类的）需要在元素与元素之间加空格，但是在emmet中空格是停止符号，所以不必加</p>
+<h2 id="缩略语"><a href="#缩略语" class="headerlink" title="缩略语"></a>缩略语</h2><p>例子：</p>
+<pre><code>#page&gt;div.logo+ul#navigation&gt;li*5&gt;a{Item $}
+</code></pre><p>生成：</p>
+<pre><code>&lt;div id=&quot;page&quot;&gt;
+    &lt;div class=&quot;logo&quot;&gt;&lt;/div&gt;
+    &lt;ul id=&quot;navigation&quot;&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Item 4&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href=&quot;&quot;&gt;Item 5&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;
+</code></pre><h3 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h3><h4 id="元素"><a href="#元素" class="headerlink" title="元素"></a>元素</h4><p>通过使用div元素名称生成div元素</p>
+<h4 id="嵌套运营商"><a href="#嵌套运营商" class="headerlink" title="嵌套运营商"></a>嵌套运营商</h4><ol>
+<li><p>子元素 <code>&gt;</code></p>
+<pre><code>div&gt;ul&gt;li
+</code></pre></li>
+<li><p>兄弟元素（Sibling） <code>+</code></p>
+<pre><code>div+p+bq
+</code></pre></li>
+</ol>
+<pre><code>&gt; bq: `&lt;blockquete&gt;&lt;/blockquete&gt;`
+</code></pre><ol start="3">
+<li><p>爬上 (往上升一层，多个<code>^</code>升多层) <code>^</code></p>
+<p> 例子1：</p>
+<pre><code>div+div&gt;p&gt;span+em^bq
+</code></pre><p> 生成：</p>
+<pre><code>&lt;div&gt;&lt;/div&gt;
+&lt;div&gt;
+    &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+    &lt;blockquote&gt;&lt;/blockquote&gt;
+&lt;/div&gt;    
+// blockquote元素将与p元素为兄弟元素    
+</code></pre></li>
+</ol>
+<pre><code>例子2：
+
+    div+div&gt;p&gt;span+em^^^bq
+
+生成：
+
+    &lt;div&gt;&lt;/div&gt;
+    &lt;div&gt;
+        &lt;p&gt;&lt;span&gt;&lt;/span&gt;&lt;em&gt;&lt;/em&gt;&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;blockquote&gt;&lt;/blockquote&gt;
+</code></pre><ol start="4">
+<li><p>生成多个一样的 <code>*</code></p>
+<p> 例子:</p>
+<pre><code>ul&gt;li*5
+</code></pre><p> 生成:</p>
+<pre><code>&lt;ul&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+    &lt;li&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></li>
+<li><p>分组 <code>()</code></p>
+<p> 例子1：</p>
+<pre><code>div&gt;(header&gt;ul&gt;li*2&gt;a)+footer&gt;p
+</code></pre><p> 生成：</p>
+<pre><code>&lt;div&gt;
+    &lt;header&gt;
+        &lt;ul&gt;
+            &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href=&quot;&quot;&gt;&lt;/a&gt;&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/header&gt;
+    &lt;footer&gt;
+        &lt;p&gt;&lt;/p&gt;
+    &lt;/footer&gt;
+&lt;/div&gt;
+</code></pre><p> 例子2：</p>
+<pre><code>(div&gt;dl&gt;(dt+dd)*3)+footer&gt;p
+</code></pre><p> 生成：</p>
+<pre><code>&lt;div&gt;
+    &lt;dl&gt;
+        &lt;dt&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+        &lt;dt&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+        &lt;dt&gt;&lt;/dt&gt;
+        &lt;dd&gt;&lt;/dd&gt;
+    &lt;/dl&gt;
+&lt;/div&gt;
+&lt;footer&gt;
+       &lt;p&gt;&lt;/p&gt;
+&lt;/footer&gt;
+</code></pre></li>
+</ol>
+<h4 id="属性运算符"><a href="#属性运算符" class="headerlink" title="属性运算符"></a>属性运算符</h4><ol>
+<li><p>id和class</p>
+<p> 语法： div#id  div.class  div#id.class.class</p>
+</li>
+</ol>
+<pre><code>例子：
+
+    div#header+div.page+div#footer.class1.class2.class3
+
+生成：
+
+    &lt;div id=&quot;header&quot;&gt;&lt;/div&gt;
+    &lt;div class=&quot;page&quot;&gt;&lt;/div&gt;
+    &lt;div id=&quot;footer&quot; class=&quot;class1 class2 class3&quot;&gt;&lt;/div&gt;
+</code></pre><ol start="2">
+<li><p>自定义属性</p>
+<p> 语法： 元素名[自定义属性=值 自定义属性=值]</p>
+<p> 例子：</p>
+<pre><code>a[routerLink=&quot;/app/route&quot;]
+</code></pre><p> 生成：</p>
+<pre><code>&lt;a routerLink=&quot;/app/route&quot;&gt;&lt;/a&gt;
+</code></pre><p> 例子2：</p>
+<pre><code>[a=&apos;value1&apos; b=&apos;value2&apos;]
+</code></pre><p> 生成2：</p>
+<pre><code>&lt;div a=&quot;value1&quot; b=&quot;value2&quot;&gt;&lt;/div&gt;
+</code></pre></li>
+</ol>
+<ol start="3">
+<li><p>编号（第一个例子中的li里的a标签）: $</p>
+<p> 例子：</p>
+<pre><code>ul&gt;li.item$*5
+</code></pre><p> 生成：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item1&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item2&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item4&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item5&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><ol>
+<li><p>更改编号基数和方向</p>
+<p> 例子：</p>
+<pre><code>ul&gt;li.item$@-3*5
+</code></pre><p> 生成：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item7&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item6&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item5&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item4&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre><p> 例子2：</p>
+<pre><code>ul&gt;li.item$@-*5
+</code></pre><p> 生成2：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;item5&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item4&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item3&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item2&quot;&gt;&lt;/li&gt;
+    &lt;li class=&quot;item1&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre></li>
+</ol>
+</li>
+</ol>
+<h4 id="内容"><a href="#内容" class="headerlink" title="内容 {}"></a>内容 <code>{}</code></h4><p>   例子： </p>
+<pre><code>a{Click me}
+</code></pre><p>   生成：</p>
+<pre><code>&lt;a href=&quot;&quot;&gt;Click me&lt;/a&gt;
+</code></pre><p><code>a{click}</code>和<code>a&gt;{click}</code>、<code>b{here}</code>和<code>b&gt;{here}</code>分别输出相同的, 但是 <code>a{click}+b{here}</code> 和 <code>a&gt;{click}+b{here}</code>输出不同</p>
+<p><code>a{click}+b{here}</code> ：</p>
+<pre><code>&lt;a href=&quot;&quot;&gt;click&lt;/a&gt;&lt;b&gt;here&lt;/b&gt;
+</code></pre><p><code>a&gt;{click}+b{here}</code>：</p>
+<pre><code>&lt;a href=&quot;&quot;&gt;click&lt;b&gt;here&lt;/b&gt;&lt;/a&gt;
+</code></pre><p><code>p&gt;{Click }+a{here}+{ to continue}</code>:</p>
+<pre><code>&lt;p&gt;Click &lt;a href=&quot;&quot;&gt;here&lt;/a&gt; to continue&lt;/p&gt;
+</code></pre><p><code>p{Click }+a{here}+{ to continue}</code>:</p>
+<pre><code>&lt;p&gt;Click &lt;/p&gt;
+&lt;a href=&quot;&quot;&gt;here&lt;/a&gt; to continue
+</code></pre><h4 id="隐式标签名称"><a href="#隐式标签名称" class="headerlink" title="隐式标签名称"></a>隐式标签名称</h4><p>   例子：</p>
+<pre><code>.class
+</code></pre><p>   生成：</p>
+<pre><code>&lt;div class=&quot;class&quot;&gt;&lt;/div&gt;
+</code></pre><p>   例子1：</p>
+<pre><code>table&gt;.row&gt;.col
+</code></pre><p>   生成1：</p>
+<pre><code>&lt;table&gt;
+    &lt;tr class=&quot;row&quot;&gt;
+        &lt;td class=&quot;col&quot;&gt;&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+</code></pre><p>   例子2：</p>
+<pre><code>em&gt;.class
+</code></pre><p>   生成2：</p>
+<pre><code>&lt;em&gt;&lt;span class=&quot;class&quot;&gt;&lt;/span&gt;&lt;/em&gt;
+</code></pre><p>   例子3： </p>
+<pre><code>ul&gt;.class
+</code></pre><p>   生成3：</p>
+<pre><code>&lt;ul&gt;
+    &lt;li class=&quot;class&quot;&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/HTML/" rel="tag"># HTML</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/11/29/数组Array-prototype方法的使用/" rel="next" title="数组Array.prototype方法的使用">
+                <i class="fa fa-chevron-left"></i> 数组Array.prototype方法的使用
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chris</p>
+              <p class="site-description motion-element" itemprop="description">前端小白/Angular</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#缩略语"><span class="nav-number">1.</span> <span class="nav-text">缩略语</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#语法"><span class="nav-number">1.1.</span> <span class="nav-text">语法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#元素"><span class="nav-number">1.1.1.</span> <span class="nav-text">元素</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#嵌套运营商"><span class="nav-number">1.1.2.</span> <span class="nav-text">嵌套运营商</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#属性运算符"><span class="nav-number">1.1.3.</span> <span class="nav-text">属性运算符</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#内容"><span class="nav-number">1.1.4.</span> <span class="nav-text">内容 {}</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#隐式标签名称"><span class="nav-number">1.1.5.</span> <span class="nav-text">隐式标签名称</span></a></li></ol></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>

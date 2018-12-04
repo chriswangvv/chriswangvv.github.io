@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="基本 源文件非注释第一行指明属于哪个包；每个go应用都包含一个名为main的包  import “包名”;fmt 包实现了格式化 IO（输入/输出）的函数  函数执行顺序：有init()函数则先执行init函数，没有则启动主函数（main()）  当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T07:19:24.328Z">
+<meta property="og:updated_time" content="2018-11-30T02:18:09.033Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go语言学习笔记">
 <meta name="twitter:description" content="基本 源文件非注释第一行指明属于哪个包；每个go应用都包含一个名为main的包  import “包名”;fmt 包实现了格式化 IO（输入/输出）的函数  函数执行顺序：有init()函数则先执行init函数，没有则启动主函数（main()）  当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包">
@@ -352,18 +352,14 @@
 <li><p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（相当于public）；标识符以小写字母开头，则只对包内可见可用（相当于protected）</p>
 </li>
 </ol>
-<blockquote>
-<p>注意：</p>
-<ol>
-<li><p>左大括号不能单独放在一行</p>
-</li>
-<li><p>一行代表一个语句结束，不需要分号（如果多个语句写在一行则需要分号：不要这么写）</p>
-</li>
-<li><p>第一个字符必须是字母或下划线</p>
-</li>
-</ol>
-</blockquote>
-<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
+<pre><code>&gt; 注意：
+&gt; 
+&gt; 1. 左大括号不能单独放在一行
+&gt; 
+&gt; 2. 一行代表一个语句结束，不需要分号（如果多个语句写在一行则需要分号：不要这么写）
+&gt; 
+&gt; 3. 第一个字符必须是字母或下划线
+</code></pre><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
 <li><p>布尔型</p>
 </li>
 <li><p>数字型: 整型：int; 浮点型：float32 float64；（还有一些别的，我感觉暂时用不上）</p>
@@ -379,11 +375,12 @@ s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错�
 </ol>
 </li>
 </ol>
-<pre><code>        在go中实现需要这样：
-        s := &quot;hello&quot;
-        c := []byte(s) // 转换为字节数组
-        c[0] = &apos;c&apos;// 修改
-        s2 := string(c) // 新字符串
+<pre><code>         在go中实现需要这样：
+         s := &quot;hello&quot;
+         c := []byte(s) // 转换为字节数组
+         c[0] = &apos;c&apos;// 修改
+         s2 := string(c) // 新字符串
+
 
 4. 多行字符串
     1. 加号连接： 
@@ -405,10 +402,11 @@ s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错�
 </ol>
 </li>
 </ol>
-<blockquote>
-<p>注意：<br>完整的整数类型列表（符号和无符号）是 int8, int16, int32, int64 和 byte, uint8, uint16, uint32，uint64.(byte是 uint8 的别名， rune是int32的别名)<br>还有复数，变量类型是complex128<br>还有错误，类型叫error。 <code>var a error</code>定义了a为一个error，a的值是nil</p>
-</blockquote>
-<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h5><p>var</p>
+<pre><code>&gt; 注意：
+&gt; 完整的整数类型列表（符号和无符号）是 int8, int16, int32, int64 和 byte, uint8, uint16, uint32，uint64.(byte是 uint8 的别名， rune是int32的别名)
+&gt; 还有复数，变量类型是complex128
+&gt; 还有错误，类型叫error。 `var a error`定义了a为一个error，a的值是nil
+</code></pre><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h5><p>var</p>
 <ol>
 <li><p>单个：</p>
 <ol>
@@ -478,16 +476,13 @@ vname2 v_type2
 </ol>
 </li>
 <li><p>可以用作枚举</p>
-<blockquote>
 <pre><code>const (
     Unknown = 0
     Female = 1
     Male = 2    
 )
-</code></pre></blockquote>
-</li>
+</code></pre></li>
 <li><p>常量可以用len(), cap(), unsafe.Sizeof()函数计算表达式的值。常量表达式中函数必须是内置函数（搜go 内置函数）</p>
-<blockquote>
 <pre><code>const (
     a = &quot;abc&quot;
     b = len(a)
@@ -497,21 +492,17 @@ func main() {
     printlin(a, b, c)//abc 3 16
 }
 </code></pre><p> 字符串类型在 go 里是个结构, 包含指向底层数组的指针和长度,这两部分每部分都是 8 个字节，所以所有字符串类型大小为 16 个字节。</p>
-</blockquote>
 </li>
 <li><p>如果同时声明多个常量，只赋值了第一个，那么下面的值会跟第一个一样</p>
-<blockquote>
 <pre><code>const (
     x          // 报错，没有赋值
     z = &quot;yyy&quot;  // yyy
     y          // yyy
 )
-</code></pre></blockquote>
-</li>
+</code></pre></li>
 </ol>
 <h5 id="iota"><a href="#iota" class="headerlink" title="iota"></a>iota</h5><p> iota 特殊常量，一个可以被编译器修改的常量</p>
 <p> iota 在 const关键字出现时将被重置为 0，const 中每新增一行常量声明将使 iota 计数一次(iota 可理解为 const 语句块中的行索引)。</p>
-<blockquote>
 <pre><code>const (
     a = iota   //0
     b  //1
@@ -523,17 +514,14 @@ func main() {
     h = iota   //7,恢复计数
     i  //8
 )
-</code></pre></blockquote>
-<p>注意：<br>此处例子涉及左移右移</p>
-<blockquote>
+</code></pre><p>注意：<br>此处例子涉及左移右移</p>
 <pre><code>const (
     i=1&lt;&lt;iota   // i左移0位，不变
     j=3&lt;&lt;iota   // 左移一位，变为二进制110，即6
     k //左移 2 位,变为二进制 1100, 即 12;
     l // 左移 3 位,变为二进制 11000,即 24
 )
-</code></pre></blockquote>
-<h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>内置的运算符有： 算术运算符 关系运算符 逻辑运算符 位运算符 赋值运算符 其他运算符</p>
+</code></pre><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>内置的运算符有： 算术运算符 关系运算符 逻辑运算符 位运算符 赋值运算符 其他运算符</p>
 <ol>
 <li><p>优先级（从上往下优先级从高到低）</p>
 <pre><code>1. `* / % &lt;&lt; &gt;&gt; &amp; &amp;^` 
@@ -607,23 +595,19 @@ for k, v := range arr {
 <li><p>switch (内容好像很多，暂时跳过)</p>
 </li>
 </ol>
-<h4 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h4><p>close new     panic complex delete<br>make  recover real  len     append<br>print imag    cap   copy    println</p>
-<p>close : 用于channel通讯，关闭channel<br>delete： map中删除实例<br>len和cap： len用于返回字符串、slice和数组的长度<br>new： 用于各种类型的内存分配<br>make： 内建类型（map、slice和channel）的内存分配<br>copy： 复制slice<br>append： 追加slice<br>panic和recover： 异常处理机制</p>
-<p>尽量不要使用for循环，可以使用函数式的some等循环，可读性高</p>
-<p>但是实际上，我们现在所了解的动态网页是在 JavaScript 引入了 XHR(XMLHttpRequest) 后才实现的，然后首先应用到 Microsoft Outlook 网络版、Gmail 和“Google 地图”等网络应用程序中。XHR 无需重新载入整个网页，即可更改网页的各个部分，包括游戏、地图、视频、在线用户调研等。这样，网络应用程序也因此变得更快速，响应也更及时</p>
-<p>网络程序员通常将 JavaScript、XHR、CSS 以及其他几种网络技术的强力组合称为 AJAX（异步 JavaScript 和 XML）。HTML 也在持续发展，新版 HTML 标准中不断加入新的功能和改进。</p>
-<p>web GL<br>3d css</p>
-<p>CSS权威指南（第3版）<br>CSS3 专业网页开发指南</p>
-<p>CSS揭秘: 技巧</p>
-<p>JavaScript高级程序设计（第3版）前七章</p>
-<p>JavaScript语言精粹： 精粹</p>
-<p>你不知道的JS</p>
-<p>深入理解计算机系统</p>
-<p>计算机网络 自顶向下方法</p>
-<p>Operating Systems: Three Easy Pieces </p>
-<p>现代操作系统</p>
-<p>算法导论</p>
-<p>数据结构与算法分析</p>
+<h4 id="内建函数"><a href="#内建函数" class="headerlink" title="内建函数"></a>内建函数</h4><pre><code>close new     panic complex delete
+make  recover real  len     append
+print imag    cap   copy    println
+</code></pre><ul>
+<li>close : 用于channel通讯，关闭channel</li>
+<li>delete： map中删除实例</li>
+<li>len和cap： len用于返回字符串、slice和数组的长度</li>
+<li>new： 用于各种类型的内存分配</li>
+<li>make： 内建类型（map、slice和channel）的内存分配</li>
+<li>copy： 复制slice</li>
+<li>append： 追加slice</li>
+<li>panic和recover： 异常处理机制</li>
+</ul>
 
       
     </div>
@@ -743,7 +727,7 @@ for k, v := range arr {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

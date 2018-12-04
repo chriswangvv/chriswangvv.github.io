@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。  控制div属性   &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变宽&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变高&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-27T09:04:28.054Z">
+<meta property="og:updated_time" content="2018-12-03T09:29:57.448Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js学习笔记-基础">
 <meta name="twitter:description" content="JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。  控制div属性   &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变宽&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变高&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;">
@@ -385,6 +385,85 @@ links[0].href = &quot;./css/&quot; + &quot;green&quot; + &quot;.css&quot;
 <ol start="3">
 <li><strong>重要</strong>：<code>items[i].index = i;</code></li>
 </ol>
+<p>一些小事</p>
+<ol>
+<li>几次方  Math.pow(底, 几次幂)</li>
+</ol>
+<ol start="2">
+<li><p>对象根据value找key：</p>
+<pre><code>function findKey(value, compare = (a, b) =&gt; a === b) {
+    return Object.keys(data).find(k =&gt; compare(data[k], value))
+}
+</code></pre></li>
+<li><p>slice（1， 2） =&gt; slice[1, 2)</p>
+<ol>
+<li>不会修改数组</li>
+<li>返回一个子数组</li>
+</ol>
+</li>
+<li><p>splice（位置，删除的个数，增加新元素）：删除个数为零时不删除</p>
+<pre><code>list = [&quot;name1&quot;, &quot;name2&quot;, &quot;name3&quot;, &quot;name4&quot;]
+list.splice(1, 0, &quot;name5&quot;, &quot;name6&quot;)
+// [&quot;name1&quot;, &quot;name5&quot;, &quot;name6&quot;, &quot;name2&quot;, &quot;name3&quot;, &quot;name4&quot;]
+</code></pre></li>
+<li><p>正则表达式 多个连续的空格只保留一个</p>
+<pre><code>console.log(song.replace(/WUB/g, &quot; &quot;))// A  B C
+console.log(song.replace(/(WUB)+/g, &quot; &quot;))// A B C
+</code></pre></li>
+<li><p>截取字符串：</p>
+<ol>
+<li>string.substr(start, length)</li>
+<li>string.substring(start, end)</li>
+</ol>
+</li>
+<li><p>返回指定位置的字符的Unicode编码</p>
+<p> stringObject.charCodeAt(index)：返回位于指定位置的字符的编码。字符串中第一个字符的下标是 0。如果 index 是负数，或大于等于字符串的长度，则 charCodeAt() 返回 NaN</p>
+<p> charAt()：返回字符子串</p>
+</li>
+<li><p>add(1)(2)(3)</p>
+<pre><code>function add(n) {
+    var sum = x;
+    var tmp = function(y) {
+        sum = sum + y;
+        return tmp;
+    };
+    // 或者        
+    // var tmp = function(y) {  
+    // return add(sum + y); 
+    // }; 
+    tmp.toString = function() {
+        return sum;
+    };
+    return tmp;
+}
+</code></pre><p>等价于</p>
+<pre><code>function add(n) {
+    var sum = x =&gt; add(n + x)
+    sum.toString = () =&gt; n
+    return sum
+}
+</code></pre></li>
+</ol>
+<ol>
+<li>毓璜顶</li>
+<li>烟台山医院</li>
+<li>滨医烟台附院</li>
+</ol>
+<p>尽量不要使用for循环，可以使用函数式的some等循环，可读性高</p>
+<p>但是实际上，我们现在所了解的动态网页是在 JavaScript 引入了 XHR(XMLHttpRequest) 后才实现的，然后首先应用到 Microsoft Outlook 网络版、Gmail 和“Google 地图”等网络应用程序中。XHR 无需重新载入整个网页，即可更改网页的各个部分，包括游戏、地图、视频、在线用户调研等。这样，网络应用程序也因此变得更快速，响应也更及时</p>
+<p>网络程序员通常将 JavaScript、XHR、CSS 以及其他几种网络技术的强力组合称为 AJAX（异步 JavaScript 和 XML）。HTML 也在持续发展，新版 HTML 标准中不断加入新的功能和改进。</p>
+<p>web GL<br>3d css</p>
+<p>CSS权威指南（第3版）<br>CSS3 专业网页开发指南</p>
+<p>CSS揭秘: 技巧</p>
+<p>JavaScript高级程序设计（第3版）前七章</p>
+<p>JavaScript语言精粹： 精粹</p>
+<p>你不知道的JS</p>
+<p>深入理解计算机系统</p>
+<p>计算机网络 自顶向下方法</p>
+<p>Operating Systems: Three Easy Pieces </p>
+<p>现代操作系统</p>
+<p>算法导论</p>
+<p>数据结构与算法分析</p>
 
       
     </div>
@@ -495,7 +574,7 @@ links[0].href = &quot;./css/&quot; + &quot;green&quot; + &quot;.css&quot;
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>

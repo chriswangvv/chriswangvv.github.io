@@ -88,7 +88,7 @@
 <meta property="og:description" content="display属性 block &amp;lt;div&amp;gt;是一个标准的块级元素。一个块级元素会新开始一行并尽可能撑满容器。其他常用的块级元素包括&amp;lt;p&amp;gt;、&amp;lt;form&amp;gt;和 HTML5中的新元素&amp;lt;header&amp;gt; &amp;lt;footer&amp;gt; &amp;lt;section&amp;gt;等待 inline &amp;lt;span&amp;gt;是一个标准的行内元素。a 元素是最常用的行内元素。 non">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="https://i.imgur.com/AbGo7KI.png">
-<meta property="og:updated_time" content="2018-11-29T07:19:45.880Z">
+<meta property="og:updated_time" content="2018-11-30T01:38:56.690Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="CSS 布局">
 <meta name="twitter:description" content="display属性 block &amp;lt;div&amp;gt;是一个标准的块级元素。一个块级元素会新开始一行并尽可能撑满容器。其他常用的块级元素包括&amp;lt;p&amp;gt;、&amp;lt;form&amp;gt;和 HTML5中的新元素&amp;lt;header&amp;gt; &amp;lt;footer&amp;gt; &amp;lt;section&amp;gt;等待 inline &amp;lt;span&amp;gt;是一个标准的行内元素。a 元素是最常用的行内元素。 non">
@@ -388,28 +388,41 @@
 <li><p>fixed 固定定位<br> 会相对视窗来定位，即使页面滚动，他还是会停留在相同的位置。 top 、 right 、 bottom 和 left 属性都可用。</p>
 <p> 一个固定定位元素不会保留它原本在页面应有的空隙（<strong>脱离文档流</strong>）</p>
 </li>
-<li><p>absolute<br> 与fixed表现类似，但不是相对于视窗 而是相对于最近的有position属性（非static）的祖先元素。如果绝对定位的元素没有非static的祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。</p>
-<h5 id="position-例子"><a href="#position-例子" class="headerlink" title="position 例子"></a>position 例子</h5> <div class="container"><br>     <nav>menu</nav><br>     <section>aaa</section><br>     <section>aaa</section><br>     <section>aaaa</section><br> </div><br> <div class="footer"><br>     aaaaaaaaaaaaaaaaa<br> </div>
+<li>absolute<br> 与fixed表现类似，但不是相对于视窗 而是相对于最近的有position属性（非static）的祖先元素。如果绝对定位的元素没有非static的祖先元素，那么它是相对于文档的 body 元素，并且它会随着页面滚动而移动。<h5 id="position-例子"><a href="#position-例子" class="headerlink" title="position 例子"></a>position 例子</h5></li>
+<li><p>例子</p>
+<pre><code>&lt;div class=&quot;container&quot;&gt;
+    &lt;nav&gt;menu&lt;/nav&gt;
+    &lt;section&gt;aaa&lt;/section&gt;
+    &lt;section&gt;aaa&lt;/section&gt;
+    &lt;section&gt;aaaa&lt;/section&gt;
+&lt;/div&gt;
+&lt;div class=&quot;footer&quot;&gt;
+    aaaaaaaaaaaaaaaaa
+&lt;/div&gt;
 
-<p> .container {</p>
-<pre><code>position: relative
-</code></pre><p> }<br> nav {</p>
-<pre><code>width: 200px;
-position: absolute;
-left: 0px;
-</code></pre><p> }<br> section {</p>
-<pre><code>margin-left: 200px;
-padding: 50px;
-box-sizing: border-box
-</code></pre><p> }<br> body {</p>
-<pre><code>margin-bottom: 120px
-</code></pre><p> }<br> .footer {</p>
-<pre><code>position: fixed;
-width: 100%;
-bottom: 0px;
-left: 0px;
-</code></pre><p> }</p>
-</li>
+.container {
+    position: relative
+}
+nav {
+    width: 200px;
+    position: absolute;
+    left: 0px;
+}
+section {
+    margin-left: 200px;
+    padding: 50px;
+    box-sizing: border-box
+}
+body {
+    margin-bottom: 120px
+}
+.footer {
+    position: fixed;
+    width: 100%;
+    bottom: 0px;
+    left: 0px;
+}
+</code></pre></li>
 </ol>
 <h4 id="float"><a href="#float" class="headerlink" title="float"></a>float</h4><p>可用于实现文字环绕图片</p>
 <pre><code>img {
@@ -489,8 +502,9 @@ nav {
     border: 5px solid blue;
     width: 70%;
 }
-</code></pre><h4 id="column-多列布局"><a href="#column-多列布局" class="headerlink" title="column 多列布局"></a>column 多列布局</h4><p> column-count: 3; // 文章内容分几列<br> column-gap： // 列间的间隔</p>
-<h4 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h4><p>这里牵扯了很多东西，flex-grow、flex-shrink、flex-basis、flex:1、flex:auto、align-items、justify-content、align-content等等等等，待会再看。</p>
+</code></pre><h4 id="column-多列布局"><a href="#column-多列布局" class="headerlink" title="column 多列布局"></a>column 多列布局</h4><pre><code>column-count: 3; // 文章内容分几列
+column-gap： // 列间的间隔
+</code></pre><h4 id="flexbox"><a href="#flexbox" class="headerlink" title="flexbox"></a>flexbox</h4><p>这里牵扯了很多东西，flex-grow、flex-shrink、flex-basis、flex:1、flex:auto、align-items、justify-content、align-content等等等等，待会再看。</p>
 <ol>
 <li>简单的flex布局例子</li>
 </ol>
@@ -660,7 +674,7 @@ nav {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
