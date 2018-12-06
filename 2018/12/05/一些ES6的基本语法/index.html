@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="英语,">
+  <meta name="keywords" content="js,ES6,">
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="2018/11/21JD.com CEO shifts away from core business after US arrest  shift away from 远离 （偏向于转向）   例句：By addressing these issues, the chinese economy will shiftaway from investment and exports to consu">
-<meta name="keywords" content="英语">
+<meta name="description" content="整理自 阮一峰-ECMAScript 6 入门 ES6声明变量的六种方法  var function let const import class  let constlet 作用域  不存在变量提升（必须先声明）  暂时性死区 例子：  var tmp = 123;  if (true) {     tmp = &amp;apos;abc&amp;apos; // 当没有let tmp时可以成功赋值     l">
+<meta name="keywords" content="js,ES6">
 <meta property="og:type" content="article">
-<meta property="og:title" content="看新闻学英语(...)">
-<meta property="og:url" content="http://yoursite.com/2018/11/21/看新闻学英语/index.html">
+<meta property="og:title" content="一些ES6的基本语法">
+<meta property="og:url" content="http://yoursite.com/2018/12/05/一些ES6的基本语法/index.html">
 <meta property="og:site_name" content="Chris的博客">
-<meta property="og:description" content="2018/11/21JD.com CEO shifts away from core business after US arrest  shift away from 远离 （偏向于转向）   例句：By addressing these issues, the chinese economy will shiftaway from investment and exports to consu">
+<meta property="og:description" content="整理自 阮一峰-ECMAScript 6 入门 ES6声明变量的六种方法  var function let const import class  let constlet 作用域  不存在变量提升（必须先声明）  暂时性死区 例子：  var tmp = 123;  if (true) {     tmp = &amp;apos;abc&amp;apos; // 当没有let tmp时可以成功赋值     l">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-29T07:20:52.019Z">
+<meta property="og:updated_time" content="2018-12-05T09:46:13.623Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="看新闻学英语(...)">
-<meta name="twitter:description" content="2018/11/21JD.com CEO shifts away from core business after US arrest  shift away from 远离 （偏向于转向）   例句：By addressing these issues, the chinese economy will shiftaway from investment and exports to consu">
+<meta name="twitter:title" content="一些ES6的基本语法">
+<meta name="twitter:description" content="整理自 阮一峰-ECMAScript 6 入门 ES6声明变量的六种方法  var function let const import class  let constlet 作用域  不存在变量提升（必须先声明）  暂时性死区 例子：  var tmp = 123;  if (true) {     tmp = &amp;apos;abc&amp;apos; // 当没有let tmp时可以成功赋值     l">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/11/21/看新闻学英语/">
+  <link rel="canonical" href="http://yoursite.com/2018/12/05/一些ES6的基本语法/">
 
 
 
 
 
-  <title>看新闻学英语(...) | Chris的博客</title>
+  <title>一些ES6的基本语法 | Chris的博客</title>
   
 
 
@@ -253,7 +253,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/11/21/看新闻学英语/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/05/一些ES6的基本语法/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chris">
@@ -270,7 +270,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">看新闻学英语(...)</h1>
+          <h1 class="post-title" itemprop="name headline">一些ES6的基本语法</h1>
         
 
         <div class="post-meta">
@@ -282,8 +282,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-11-21T09:31:08+08:00">
-                2018-11-21
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-05T15:56:08+08:00">
+                2018-12-05
               </time>
             
 
@@ -305,8 +305,8 @@
               
               
                 <span itemprop="about" itemscope="" itemtype="http://schema.org/Thing">
-                  <a href="/categories/其他/" itemprop="url" rel="index">
-                    <span itemprop="name">其他</span>
+                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
+                    <span itemprop="name">JavaScript</span>
                   </a>
                 </span>
 
@@ -342,86 +342,124 @@
       
 
       
-        <h3 id="2018-11-21"><a href="#2018-11-21" class="headerlink" title="2018/11/21"></a>2018/11/21</h3><p><a href="https://edition.cnn.com/2018/11/20/tech/jd-earnings-richard-liu/index.html" target="_blank" rel="noopener">JD.com CEO shifts away from core business after US arrest</a></p>
+        <p>整理自 <a href="http://es6.ruanyifeng.com/#README" target="_blank" rel="noopener">阮一峰-ECMAScript 6 入门</a></p>
+<p>ES6声明变量的六种方法</p>
 <ul>
-<li>shift away from 远离 （偏向于转向）</li>
+<li>var</li>
+<li>function</li>
+<li>let</li>
+<li>const</li>
+<li>import</li>
+<li>class</li>
 </ul>
-<blockquote>
-<p>例句：By addressing these issues, the chinese economy will shiftaway from investment and exports to consumption, in my view.<br>  在我看来，在解决这些问题的过程中，中国经济的动力将从投资和出口转向消费。</p>
-</blockquote>
-<ul>
-<li><p>suspicion [名]怀疑 嫌疑  [动] 怀疑</p>
+<h2 id="let-const"><a href="#let-const" class="headerlink" title="let const"></a>let const</h2><h3 id="let"><a href="#let" class="headerlink" title="let"></a>let</h3><ol>
+<li><p>作用域</p>
 </li>
-<li><p>rape [动] 强奸 掠夺 [名] 强奸 掠夺 油菜 葡萄渣</p>
+<li><p>不存在变量提升（必须先声明）</p>
 </li>
-<li><p>the founder and chief executive [ɪɡˈzɛkjətɪv] 创始人兼首席执行官</p>
+<li><p>暂时性死区</p>
+<p>例子： </p>
+<pre><code>var tmp = 123;
+ if (true) {
+    tmp = &apos;abc&apos; // 当没有let tmp时可以成功赋值
+    let tmp // const 同理
+}
+</code></pre></li>
+<li><p>不允许重复声明</p>
 </li>
-<li><p>e-commerce 电子商务</p>
+</ol>
+<h3 id="块级作用域"><a href="#块级作用域" class="headerlink" title="块级作用域"></a>块级作用域</h3><h3 id="const"><a href="#const" class="headerlink" title="const"></a>const</h3><ol>
+<li><p>一旦声明，必须立即初始化；不提升；暂时性死区；不可重复声明</p>
 </li>
-<li><p>handing… to… 交移给</p>
+<li><p>本质： 变量指向的内存地址所保存的数据不能改动。</p>
+<p>所以，复合类型的数据（对象和数组），变量指向的内存地址保存的只是一个指向实际数据的指针，const只能保证这个指针总是指向另一个固定的地址（所以，const arr[]依然能往里push数据）</p>
 </li>
-<li><p>earnings call 营收会议</p>
-</li>
-<li><p>mature  [məˈtʃʊr] [形] 人/树/动物 成熟的 仔细考虑过的 到期应支付的 成年人的 [动] 成熟 成长 到期 慎重拟定（计划等）</p>
-</li>
-<li><p>allegation [ˌælɪˈɡeʃən] [名] 指控 陈述 主张 宣称</p>
-</li>
-<li><p>falsely accused 诬告  [əˈkjuzd]</p>
-</li>
-<li><p>plunged [名] 暴跌;骤降;颠簸( plunge的过去式和过去分词 );突降 </p>
-</li>
-<li><p>giant [ˈdʒaɪənt] [名] 巨人大汉;巨兽;卓越人物 [形] 特大的;伟大的</p>
-</li>
-<li><p>earnings report 收益报表</p>
-</li>
-<li><p>quarterly [ˈkwɔ:rtərli] [形] 季度的 [副]按季的 [名]季刊</p>
-</li>
-<li><p>lackluster [‘lækˌlʌstə] [名][形]无光泽，暗淡；无光泽的，暗淡的</p>
-</li>
-<li><p>lackluster quarterly earnings report<br>乏善可陈的季度收益报告</p>
-</li>
-<li><p>investor [名] 投资者；包围者，围攻者</p>
-</li>
-<li><p>be associated with 与…联系在一起</p>
-</li>
-<li><p>tycoons [名] 大亨;企业巨头</p>
-</li>
-</ul>
-<p>being wired to step away<br>damage control</p>
-<ul>
-<li><p>executive [名] 经理 行政领导</p>
-</li>
-<li><p>brush off 刷掉;掸掉;拒绝听;不理睬</p>
-</li>
-<li><p>allegations [名]指控;陈述，主张;宣称;陈词，陈述</p>
-</li>
-<li><p>chief financial officer 财务长</p>
-</li>
-<li><p>further</p>
-</li>
-<li><p>due process 法定诉讼程序</p>
-</li>
-<li><p>estimated [‘estɪmetɪd] [名]估计的;估算的;预计的 [动]估计，评价；（粗略）估计估量，预算</p>
-</li>
-<li><p>net worth 资本净值，净值</p>
-</li>
-</ul>
-<blockquote>
-<p>He was released without bail less than 24 hours later</p>
-<p>他在不到24小时的保释期内获释。 [bel]</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>news of the arrest followed him home, where images of the billionaire in an orange jumpsuit circulated on Chinese social media</p>
-<p>他被捕的消息紧随其后，就在家中，中国社交媒体上流传着这位身着橙色连衣裙的亿万富翁的照片。</p>
-</blockquote>
-<hr>
-<blockquote>
-<p>“Investors are right to be scared,” said CNN contributor Ryan Patel, former vice president of global development at Pinkberry.</p>
-<p>“投资者害怕是正确的，”美国有线电视新闻网的撰稿人Ryan Patel说，他是Pinkberry全球发展部的前副总裁。</p>
-</blockquote>
-<hr>
+<li><p>freeze <em>**</em></p>
+<pre><code>const foo = Object.freeze({});
+foo.prop = 123
+console.log(foo.prop)
 
+var constantize = (obj) =&gt; {
+    Object.freeze(obj);
+    Object.keys(obj).forEach((key, i) =&gt; {
+        if (typeof obj[key] === &apos;object&apos;) {
+            constantize(obj[key])
+        }
+    })
+}
+</code></pre></li>
+</ol>
+<h3 id="顶层对象的属性"><a href="#顶层对象的属性" class="headerlink" title="顶层对象的属性 **"></a>顶层对象的属性 <em>**</em></h3><ol>
+<li>为了保持兼容性，var命令和function命令声明的全局变量，依旧是顶层对象的属性；另一方面规定，let命令、const命令、class命令声明的全局变量，不属于顶层对象的属性。也就是说，从 ES6 开始，全局变量将逐步与顶层对象的属性脱钩。</li>
+</ol>
+<h3 id="global对象"><a href="#global对象" class="headerlink" title="global对象 **"></a>global对象 <em>**</em></h3><h2 id="变量的解构赋值"><a href="#变量的解构赋值" class="headerlink" title="变量的解构赋值"></a>变量的解构赋值</h2><h3 id="数组的解构赋值"><a href="#数组的解构赋值" class="headerlink" title="数组的解构赋值"></a>数组的解构赋值</h3><ol>
+<li><p>模式匹配</p>
+<p> 如果解构不成功，变量的值就等于undefined</p>
+<p> 例子：</p>
+<pre><code>let [foo, [[bar], baz]] = [1, [[2], 3]]
+foo === 1
+bar === 2
+baz === 3
+
+let [ , , third] = [&quot;foo&quot;, &quot;bar&quot;, &quot;baz&quot;];
+third // &quot;baz&quot;
+
+let [head, ...tail] = [1, 2, 3, 4];
+head // 1
+tail // [2, 3, 4]
+
+let [x, y, ...z] = [&apos;a&apos;];
+x // &quot;a&quot;
+y // undefined
+z // []
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>不完全解构</p>
+<p> 例子：</p>
+<pre><code>let [x, y] = [1, 2, 3];
+x // 1
+y // 2
+
+let [a, [b], d] = [1, [2, 3], 4];
+a // 1
+b // 2
+d // 4
+</code></pre><p> 如果等号的右边不是数组（或者严格地说，不是可遍历的结构，参见《Iterator》一章），那么将会报错。</p>
+<p> 报错例子：</p>
+<pre><code>let [foo] = 1;
+let [foo] = false;
+let [foo] = NaN;
+let [foo] = undefined;
+let [foo] = null;
+let [foo] = {};
+</code></pre><p> 对于Set结构，也可以使用数组的解构赋值</p>
+<pre><code>let [x, y, z] = new Set([&apos;a&apos;, &apos;b&apos;, &apos;c&apos;])
+</code></pre><p> 实际上，只要某种数据接口具有Iterator接口，都可以采用数组形式的解构赋值</p>
+<pre><code>function* fibs() {
+    let a = 0;
+    let b = 1;
+    while (true) {
+        yield a;
+        [a, b] = [b, a + b]
+    }
+}
+
+let [first, second, third, fourth, fifth, sixth] = fibs();
+sixth === 5
+</code></pre><p> fibs是一个Generator函数，原生具有Iterator接口，解构赋值会依次从这个接口获取值</p>
+</li>
+<li><p>默认值</p>
+<p> 解构赋值允许指定默认值</p>
+<p> 例子：</p>
+<pre><code>let [foo = true] = []
+foo ===&gt; true
+let [x, y = &apos;b&apos;] = [&apos;a&apos;]
+let [x, y = &apos;b&apos;] = [&apos;a&apos;, undefined]
+</code></pre><p>  注意，ES6 内部使用严格相等运算符（===），判断一个位置是否有值。所以，只有当一个数组成员严格等于undefined，默认值才会生效</p>
+</li>
+</ol>
+<h3 id="对象的解构赋值"><a href="#对象的解构赋值" class="headerlink" title="对象的解构赋值"></a>对象的解构赋值</h3><h3 id="字符串的解构赋值"><a href="#字符串的解构赋值" class="headerlink" title="字符串的解构赋值"></a>字符串的解构赋值</h3><h3 id="数值和布尔值的解构赋值"><a href="#数值和布尔值的解构赋值" class="headerlink" title="数值和布尔值的解构赋值"></a>数值和布尔值的解构赋值</h3><h3 id="函数参数的解构赋值"><a href="#函数参数的解构赋值" class="headerlink" title="函数参数的解构赋值"></a>函数参数的解构赋值</h3><h3 id="圆括号问题"><a href="#圆括号问题" class="headerlink" title="圆括号问题"></a>圆括号问题</h3><h3 id="用途"><a href="#用途" class="headerlink" title="用途"></a>用途</h3>
       
     </div>
     
@@ -438,7 +476,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/英语/" rel="tag"># 英语</a>
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/ES6/" rel="tag"># ES6</a>
           
         </div>
       
@@ -451,8 +491,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/11/16/关于CSS，一些容易忘记的事/" rel="next" title="关于CSS，一些容易忘记的事">
-                <i class="fa fa-chevron-left"></i> 关于CSS，一些容易忘记的事
+              <a href="/2018/12/04/一些ajax的基本语法/" rel="next" title="一些ajax的基本语法">
+                <i class="fa fa-chevron-left"></i> 一些ajax的基本语法
               </a>
             
           </div>
@@ -460,10 +500,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/11/29/ES6扩展运算符/" rel="prev" title="ES6扩展运算符...">
-                ES6扩展运算符... <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -595,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#2018-11-21"><span class="nav-number">1.</span> <span class="nav-text">2018/11/21</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#let-const"><span class="nav-number">1.</span> <span class="nav-text">let const</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#let"><span class="nav-number">1.1.</span> <span class="nav-text">let</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#块级作用域"><span class="nav-number">1.2.</span> <span class="nav-text">块级作用域</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#const"><span class="nav-number">1.3.</span> <span class="nav-text">const</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#顶层对象的属性"><span class="nav-number">1.4.</span> <span class="nav-text">顶层对象的属性 **</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#global对象"><span class="nav-number">1.5.</span> <span class="nav-text">global对象 **</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#变量的解构赋值"><span class="nav-number">2.</span> <span class="nav-text">变量的解构赋值</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#数组的解构赋值"><span class="nav-number">2.1.</span> <span class="nav-text">数组的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#对象的解构赋值"><span class="nav-number">2.2.</span> <span class="nav-text">对象的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#字符串的解构赋值"><span class="nav-number">2.3.</span> <span class="nav-text">字符串的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#数值和布尔值的解构赋值"><span class="nav-number">2.4.</span> <span class="nav-text">数值和布尔值的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#函数参数的解构赋值"><span class="nav-number">2.5.</span> <span class="nav-text">函数参数的解构赋值</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#圆括号问题"><span class="nav-number">2.6.</span> <span class="nav-text">圆括号问题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#用途"><span class="nav-number">2.7.</span> <span class="nav-text">用途</span></a></li></ol></li></ol></div>
             
 
           </div>

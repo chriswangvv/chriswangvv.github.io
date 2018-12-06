@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。  控制div属性   &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变宽&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变高&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;">
+<meta name="description" content="全局的对象global objects 或称 标准内置对象全局的对象是说在全局作用域里的对象 tips：不要和 “全局对象（global object）” 混淆 标准内置对象的分类值属性 Infinity NaN undefined null字面量  函数属性全局函数可以直接调用  eval() 避免用吧  eval(string):将传入的字符串当作js代码执行 执行指定代码之后的返回值。如果返">
 <meta name="keywords" content="js">
 <meta property="og:type" content="article">
 <meta property="og:title" content="js学习笔记-基础">
 <meta property="og:url" content="http://yoursite.com/2018/11/16/js学习笔记-基础/index.html">
 <meta property="og:site_name" content="Chris的博客">
-<meta property="og:description" content="JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。  控制div属性   &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变宽&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变高&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;">
+<meta property="og:description" content="全局的对象global objects 或称 标准内置对象全局的对象是说在全局作用域里的对象 tips：不要和 “全局对象（global object）” 混淆 标准内置对象的分类值属性 Infinity NaN undefined null字面量  函数属性全局函数可以直接调用  eval() 避免用吧  eval(string):将传入的字符串当作js代码执行 执行指定代码之后的返回值。如果返">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-12-03T09:29:57.448Z">
+<meta property="og:updated_time" content="2018-12-06T01:22:20.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js学习笔记-基础">
-<meta name="twitter:description" content="JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。  控制div属性   &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变宽&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;gt;变高&amp;lt;/button&amp;gt; &amp;lt;button class=&amp;quot;btn&amp;quot;&amp;">
+<meta name="twitter:description" content="全局的对象global objects 或称 标准内置对象全局的对象是说在全局作用域里的对象 tips：不要和 “全局对象（global object）” 混淆 标准内置对象的分类值属性 Infinity NaN undefined null字面量  函数属性全局函数可以直接调用  eval() 避免用吧  eval(string):将传入的字符串当作js代码执行 执行指定代码之后的返回值。如果返">
 
 
 
@@ -342,7 +342,287 @@
       
 
       
-        <p>JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。</p>
+        <h2 id="全局的对象global-objects-或称-标准内置对象"><a href="#全局的对象global-objects-或称-标准内置对象" class="headerlink" title="全局的对象global objects 或称 标准内置对象"></a>全局的对象global objects 或称 标准内置对象</h2><p>全局的对象是说在全局作用域里的对象</p>
+<p>tips：不要和 “全局对象（global object）” 混淆</p>
+<h3 id="标准内置对象的分类"><a href="#标准内置对象的分类" class="headerlink" title="标准内置对象的分类"></a>标准内置对象的分类</h3><h4 id="值属性"><a href="#值属性" class="headerlink" title="值属性"></a>值属性</h4><ol>
+<li>Infinity</li>
+<li>NaN</li>
+<li>undefined</li>
+<li>null字面量</li>
+</ol>
+<h4 id="函数属性"><a href="#函数属性" class="headerlink" title="函数属性"></a>函数属性</h4><p>全局函数可以直接调用</p>
+<ol>
+<li><p><code>eval()</code> 避免用吧</p>
+<blockquote>
+<p>eval(string):将传入的字符串当作js代码执行</p>
+<p>执行指定代码之后的返回值。如果返回值为空，返回undefined</p>
+</blockquote>
+</li>
+<li><p>isFinite()</p>
+</li>
+</ol>
+<pre><code>&gt; isFinite(testValue) 函数用来判断被传入的参数值是否为一个有限数值（finite number）
+</code></pre><ol start="4">
+<li><p>isNaN()</p>
+<blockquote>
+<p>isNaN(testValue) 函数用来确定一个值是否为NaN<br>也可以用ES5/ES6中定义的Number.isNaN()或typeof()来判断是否为一个非数字        </p>
+</blockquote>
+</li>
+<li><p>parseFloat()</p>
+<blockquote>
+<p>parseFloat(value) 函数解析一个字符串参数并返回一 个浮点数</p>
+<p>如果给定值不能被转换成数值，则会返回 NaN。</p>
+</blockquote>
+</li>
+<li><p>parseInt()</p>
+<blockquote>
+<p> parseInt(string, radix) 函数解析一个字符串参数，并返回一个指定基数的整数 (数学系统的基础)</p>
+<p>如果被解析参数的第一个字符无法被转化成数值类型，则返回 NaN</p>
+</blockquote>
+<blockquote>
+<p>注意：radix参数为n 将会把第一个参数看作是一个数的n进制表示，而返回的值则是十进制的。例如</p>
+<pre><code>parseInt(&apos;123&apos;, 5) // 将&apos;123&apos;看作5进制数，返回十进制数38 =1*5^2 + 2*5^1 + 3*5^0 = 38
+</code></pre></blockquote>
+</li>
+</ol>
+<ol start="7">
+<li><p>decodeURI()</p>
+<p> decodeURI(encodedURI) 函数解码一个由encodeURI 先前创建的统一资源标识符（URI）或类似的例程</p>
+</li>
+<li><p>decodeURIComponent()</p>
+<p> decodeURIComponent(encodedURI) 方法用于解码由 encodeURIComponent 方法或者其它类似方法编码的部分统一资源标识符（URI）    </p>
+</li>
+<li><p>encodeURI()</p>
+<blockquote>
+<p>encodeURI(URI)  函数通过将特定字符的每个实例替换为一个、两个、三或四转义序列来对统一资源标识符 (URI) 进行编码 (该字符的 UTF-8 编码仅为四转义序列)由两个 “代理” 字符组成)。</p>
+<p>返回 一个新字符串, 表示提供的字符串编码为统一资源标识符 (URI)。</p>
+</blockquote>
+</li>
+<li><p>encodeURIComponent()</p>
+</li>
+</ol>
+<h4 id="基本对象"><a href="#基本对象" class="headerlink" title="基本对象"></a>基本对象</h4><ul>
+<li>Object</li>
+<li>Function</li>
+<li>Boolean</li>
+<li>Symbol</li>
+<li>Error</li>
+<li>EvalError</li>
+<li>InternalError</li>
+<li>RangeError</li>
+<li>ReferenceError</li>
+<li>SyntaxError</li>
+<li>TypeError</li>
+<li>URIError</li>
+</ul>
+<h4 id="数字和日期对象"><a href="#数字和日期对象" class="headerlink" title="数字和日期对象"></a>数字和日期对象</h4><ul>
+<li>Number</li>
+<li>Math</li>
+<li>Date</li>
+</ul>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h4><ul>
+<li>string</li>
+<li>RegExp</li>
+</ul>
+<h4 id="可索引的集合对象"><a href="#可索引的集合对象" class="headerlink" title="可索引的集合对象"></a>可索引的集合对象</h4><ul>
+<li>Array</li>
+<li>Int8Array</li>
+<li>Uint8Array</li>
+<li>Uint8ClampedArray</li>
+<li>Int16Array</li>
+<li>Uint16Array</li>
+<li>Int32Array</li>
+<li>Uint32Array</li>
+<li>Float32Array</li>
+<li>Float64Array</li>
+</ul>
+<h4 id="使用键的集合对象"><a href="#使用键的集合对象" class="headerlink" title="使用键的集合对象"></a>使用键的集合对象</h4><ul>
+<li>Map</li>
+<li>Set</li>
+<li>WeakMap</li>
+<li>WeakSet</li>
+</ul>
+<h4 id="矢量集合-—-X"><a href="#矢量集合-—-X" class="headerlink" title="矢量集合 — X"></a>矢量集合 — X</h4><h4 id="结构化数据"><a href="#结构化数据" class="headerlink" title="结构化数据"></a>结构化数据</h4><p>用来表示和操作结构化的缓冲区数据，或使用 JSON 编码的数据</p>
+<ul>
+<li>ArrayBuffer</li>
+<li>SharedArrayBuffer — X</li>
+<li>Atomics — X</li>
+<li>DataView</li>
+<li>JSON</li>
+</ul>
+<h4 id="控制抽象对象"><a href="#控制抽象对象" class="headerlink" title="控制抽象对象"></a>控制抽象对象</h4><ul>
+<li>Promise</li>
+<li>Generator</li>
+<li>GeneratorFunction</li>
+<li>AsyncFunction — X</li>
+</ul>
+<h4 id="反射"><a href="#反射" class="headerlink" title="反射"></a>反射</h4><ul>
+<li>Reflect</li>
+<li>Proxy</li>
+</ul>
+<h4 id="国际化"><a href="#国际化" class="headerlink" title="国际化"></a>国际化</h4><p>为了支持多语言处理而加入ECMAScript的对象</p>
+<ul>
+<li>Intl</li>
+<li>Intl.Collator</li>
+<li>Intl.DateTimeFormat</li>
+<li>Intl.NumberFormat</li>
+</ul>
+<h4 id="WebAssembl"><a href="#WebAssembl" class="headerlink" title="WebAssembl"></a>WebAssembl</h4><h4 id="qita"><a href="#qita" class="headerlink" title="qita"></a>qita</h4><ul>
+<li><p>arguments</p>
+<p> arguments对象是所有（非箭头）函数中都可用的局部变量</p>
+</li>
+</ul>
+<h2 id="表达式和运算符分类"><a href="#表达式和运算符分类" class="headerlink" title="表达式和运算符分类"></a>表达式和运算符分类</h2><h3 id="主要表达式"><a href="#主要表达式" class="headerlink" title="主要表达式"></a>主要表达式</h3><p>JavaScript中基本关键字和常用表达式。</p>
+<ol>
+<li><p>this 关键字指向函数的执行上下文。</p>
+<blockquote>
+<ol>
+<li><p>全局上下文</p>
+<p> 无论是否在严格模式下，在全局执行上下文中（在任何函数体外部）this 都指代全局对象</p>
+</li>
+</ol>
+</blockquote>
+</li>
+</ol>
+<pre><code>&gt; 2. 函数上下文
+&gt;  
+&gt;  在函数内部，this的值取决于函数被调用的方式
+&gt;  
+&gt;  - 简单调用 
+&gt;  
+&gt;     在严格模式下，如果 this 没有被执行上下文（execution context）定义，那它将保持为 undefined
+&gt;     
+&gt;     如果要想把 this 的值从一个上下文传到另一个，就要用 call 或者apply 方法
+&gt;  - bind方法
+&gt;  - 箭头函数
+&gt;  - 作为对象的方法
+&gt;  - 作为构造函数
+&gt;  - 作为一个DOM事件处理函数
+&gt;  - 作为一个内联事件处理函数
+&gt;  
+</code></pre><ol start="2">
+<li><p>function 关键字定义了函数表达式。</p>
+</li>
+<li><p>class 关键字定义了类表达式。</p>
+</li>
+<li><p>function* 关键字定义了一个 generator 函数表达式。</p>
+</li>
+<li><p>yield  暂停和恢复 generator 函数。</p>
+</li>
+<li><p>yield*  委派给另外一个generator函数或可迭代的对象。</p>
+</li>
+<li><p>await  暂停或恢复执行异步函数，并等待promise的resolve/reject回调。</p>
+</li>
+<li><p>[]  数组初始化/字面量语法。</p>
+</li>
+<li><p>{}  对象初始化/字面量语法。</p>
+</li>
+<li><p>/ab+c/i  正则表达式字面量语法。</p>
+</li>
+<li>( )  分组操作符</li>
+</ol>
+<h3 id="左表达式"><a href="#左表达式" class="headerlink" title="左表达式"></a>左表达式</h3><ol>
+<li>属性访问符</li>
+<li>new</li>
+<li>new.target</li>
+<li>super</li>
+<li>…obj</li>
+</ol>
+<h3 id="自增和自减"><a href="#自增和自减" class="headerlink" title="自增和自减"></a>自增和自减</h3><ol>
+<li>A++</li>
+<li>A–</li>
+<li>++A</li>
+<li>–A</li>
+</ol>
+<h3 id="一元运算符"><a href="#一元运算符" class="headerlink" title="一元运算符"></a>一元运算符</h3><ol>
+<li>delete</li>
+<li>void</li>
+<li>typeof</li>
+<li>+</li>
+<li>-</li>
+<li>~</li>
+<li>!</li>
+</ol>
+<h3 id="算数运算符"><a href="#算数运算符" class="headerlink" title="算数运算符"></a>算数运算符</h3><ol>
+<li>+</li>
+<li>-</li>
+<li>/</li>
+<li>*</li>
+<li>%</li>
+</ol>
+<h3 id="关系运算符"><a href="#关系运算符" class="headerlink" title="关系运算符"></a>关系运算符</h3><ol>
+<li>in</li>
+<li>instanceof</li>
+<li>&lt;</li>
+<li><blockquote>
+</blockquote>
+</li>
+<li>&lt;=</li>
+<li><blockquote>
+<p>=</p>
+</blockquote>
+</li>
+</ol>
+<h3 id="相等运算符"><a href="#相等运算符" class="headerlink" title="相等运算符"></a>相等运算符</h3><ol>
+<li>==</li>
+<li>!=</li>
+<li>===</li>
+<li>!==</li>
+</ol>
+<h3 id="位移运算符"><a href="#位移运算符" class="headerlink" title="位移运算符"></a>位移运算符</h3><ol>
+<li>&lt;&lt;</li>
+<li><blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+</ol>
+<h3 id="二进制位运算符"><a href="#二进制位运算符" class="headerlink" title="二进制位运算符"></a>二进制位运算符</h3><ol>
+<li>&amp;</li>
+<li>|</li>
+<li>^</li>
+</ol>
+<h3 id="二元逻辑运算符"><a href="#二元逻辑运算符" class="headerlink" title="二元逻辑运算符"></a>二元逻辑运算符</h3><ol>
+<li>&amp;&amp;</li>
+<li>||</li>
+</ol>
+<h3 id="条件-三元-运算符"><a href="#条件-三元-运算符" class="headerlink" title="条件(三元)运算符"></a>条件(三元)运算符</h3><p>(condition ? ifTrue: ifFalse)</p>
+<h3 id="赋值运算符"><a href="#赋值运算符" class="headerlink" title="赋值运算符"></a>赋值运算符</h3><ol>
+<li>= 赋值运算符。</li>
+<li>*= 赋值乘积。</li>
+<li>/= 赋值商。</li>
+<li>%= 赋值求余。</li>
+<li>+= 赋值求和。</li>
+<li>-= 赋值求差。</li>
+<li>&lt;&lt;= 左位移。</li>
+<li><blockquote>
+<blockquote>
+<p>= 右位移。</p>
+</blockquote>
+</blockquote>
+</li>
+<li><blockquote>
+<blockquote>
+<blockquote>
+<p>= 无符号右位移。</p>
+</blockquote>
+</blockquote>
+</blockquote>
+</li>
+<li>&amp;= 赋值与。</li>
+<li>^= 赋值按位异或。</li>
+<li>|= 赋值或。</li>
+<li><code>[a, b] = [1, 2]  {a, b} = {a:1, b:2}</code><br>解构赋值允许你分配数组或者对象变量的属性通过使用规定的语法，其看起来和数组和对象字面量很相似。</li>
+</ol>
+<h3 id="逗号操作符"><a href="#逗号操作符" class="headerlink" title="逗号操作符"></a>逗号操作符</h3><p>逗号操作符允许在一个判断状态中有多个表达式去进行运算并且最后返回最后一个表达式的值。</p>
+<p>JavaScript 是一种动态类型语言，也就是说，变量的类型没有限制，变量可以随时更改类型。</p>
 <ol>
 <li>控制div属性</li>
 </ol>
@@ -443,15 +723,33 @@ console.log(song.replace(/(WUB)+/g, &quot; &quot;))// A B C
     return sum
 }
 </code></pre></li>
-</ol>
+<li><p>html的：<code>&lt;caption&gt;表5 这是图表上面的标题&lt;/caption&gt;</code></p>
+</li>
+<li><p>html的：<code>&lt;a href=&quot;mailto:1638044736@qq.com&quot;&gt;</code><br>(表单<code>&lt;form action=&quot;mailto:1638044736@qq.com&quot;&gt;</code>)</p>
+</li>
+<li><p>pop()</p>
+</li>
+<li><p>~~</p>
 <ol>
-<li>毓璜顶</li>
-<li>烟台山医院</li>
-<li>滨医烟台附院</li>
+<li>~ 按位取反，计算机里处理二进制数据时候的非，~~就是再转回来，利用两个按位取反的符号，进行类型的转换，转换成数字符号</li>
+<li>^= 异或运算，相同取0，不同取1</li>
 </ol>
-<p>尽量不要使用for循环，可以使用函数式的some等循环，可读性高</p>
+</li>
+</ol>
+<p>randomstr中是否包含元音字母</p>
+<pre><code>const randomStr = &quot;ffffllll&quot;;
+const result = [...randomStr].some((item, index) =&gt; {
+    return parseInt([&apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, &apos;u&apos;].indexOf(item)) !== -1
+})
+console.log(result)
+
+
+const isVowel = char =&gt; [&apos;a&apos;, &apos;e&apos;, &apos;i&apos;, &apos;o&apos;, &apos;u&apos;].includes(char);
+const containsVowel = str =&gt; [...str].some(isVowel);
+var falg = containsVowel(randomStr); //true
+console.log(falg)
+</code></pre><p>尽量不要使用for循环，可以使用函数式的some等循环，可读性高</p>
 <p>但是实际上，我们现在所了解的动态网页是在 JavaScript 引入了 XHR(XMLHttpRequest) 后才实现的，然后首先应用到 Microsoft Outlook 网络版、Gmail 和“Google 地图”等网络应用程序中。XHR 无需重新载入整个网页，即可更改网页的各个部分，包括游戏、地图、视频、在线用户调研等。这样，网络应用程序也因此变得更快速，响应也更及时</p>
-<p>网络程序员通常将 JavaScript、XHR、CSS 以及其他几种网络技术的强力组合称为 AJAX（异步 JavaScript 和 XML）。HTML 也在持续发展，新版 HTML 标准中不断加入新的功能和改进。</p>
 <p>web GL<br>3d css</p>
 <p>CSS权威指南（第3版）<br>CSS3 专业网页开发指南</p>
 <p>CSS揭秘: 技巧</p>
@@ -464,6 +762,27 @@ console.log(song.replace(/(WUB)+/g, &quot; &quot;))// A B C
 <p>现代操作系统</p>
 <p>算法导论</p>
 <p>数据结构与算法分析</p>
+<ol>
+<li><a href="https://www.imooc.com/learn/9" target="_blank" rel="noopener">https://www.imooc.com/learn/9</a></li>
+</ol>
+<pre><code>css选择器 css继承层叠和特殊性  格式化排版  盒模型 布局模型 单位和值 样式设置技巧
+</code></pre><ol start="2">
+<li>ajax 两组视频 慕课网</li>
+</ol>
+<p>职位描述：<br>岗位职责：</p>
+<p>1） 负责公司产品前端代码开发、页面重构以及交互设计逻辑处理；</p>
+<p>2） 负责公共组件的开发及对新技术的调研应用；</p>
+<p>3） 利用HTML5等相关技术开发跨平台前端页面，良好兼容Android和IOS设备；</p>
+<p>4） 能够承担前端框架建设与组件封装，并不断优化前端工具组件库；</p>
+<p>5） 持续优化前端开发模式和规范。</p>
+<p>任职条件：</p>
+<p>1、精通Ajax、DOM、JSON等相关技术，熟练使用原生JS编程；</p>
+<p>2、精通html、css等网页制作技术，熟悉页面架构和布局；</p>
+<p>3、三年以上工作经验，一年以上Vue框架工作经验，至少熟练掌握一门（Hybrid React、Angular、Vue等）及相关框架和技术；</p>
+<p>4、熟悉node.js，熟练掌握 ES6 、Typescript、Gulp 、Webpack 等规范和技术；</p>
+<p>5、 熟悉W3C标准，对表现与数据分离、Web语义化有较为深刻理解；</p>
+<p>6、 熟悉页面性能的优化，浏览器开发调试工具， 熟练解决各种浏览器兼容问题；</p>
+<p>7、有带小组经验者更佳；</p>
 
       
     </div>
@@ -558,8 +877,17 @@ console.log(song.replace(/(WUB)+/g, &quot; &quot;))// A B C
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
             
@@ -574,7 +902,7 @@ console.log(song.replace(/(WUB)+/g, &quot; &quot;))// A B C
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -619,6 +947,22 @@ console.log(song.replace(/(WUB)+/g, &quot; &quot;))// A B C
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#全局的对象global-objects-或称-标准内置对象"><span class="nav-number">1.</span> <span class="nav-text">全局的对象global objects 或称 标准内置对象</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#标准内置对象的分类"><span class="nav-number">1.1.</span> <span class="nav-text">标准内置对象的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#值属性"><span class="nav-number">1.1.1.</span> <span class="nav-text">值属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#函数属性"><span class="nav-number">1.1.2.</span> <span class="nav-text">函数属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#基本对象"><span class="nav-number">1.1.3.</span> <span class="nav-text">基本对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#数字和日期对象"><span class="nav-number">1.1.4.</span> <span class="nav-text">数字和日期对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#字符串"><span class="nav-number">1.1.5.</span> <span class="nav-text">字符串</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#可索引的集合对象"><span class="nav-number">1.1.6.</span> <span class="nav-text">可索引的集合对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#使用键的集合对象"><span class="nav-number">1.1.7.</span> <span class="nav-text">使用键的集合对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#矢量集合-—-X"><span class="nav-number">1.1.8.</span> <span class="nav-text">矢量集合 — X</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#结构化数据"><span class="nav-number">1.1.9.</span> <span class="nav-text">结构化数据</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#控制抽象对象"><span class="nav-number">1.1.10.</span> <span class="nav-text">控制抽象对象</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#反射"><span class="nav-number">1.1.11.</span> <span class="nav-text">反射</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#国际化"><span class="nav-number">1.1.12.</span> <span class="nav-text">国际化</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#WebAssembl"><span class="nav-number">1.1.13.</span> <span class="nav-text">WebAssembl</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#qita"><span class="nav-number">1.1.14.</span> <span class="nav-text">qita</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#表达式和运算符分类"><span class="nav-number">2.</span> <span class="nav-text">表达式和运算符分类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#主要表达式"><span class="nav-number">2.1.</span> <span class="nav-text">主要表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#左表达式"><span class="nav-number">2.2.</span> <span class="nav-text">左表达式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#自增和自减"><span class="nav-number">2.3.</span> <span class="nav-text">自增和自减</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#一元运算符"><span class="nav-number">2.4.</span> <span class="nav-text">一元运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#算数运算符"><span class="nav-number">2.5.</span> <span class="nav-text">算数运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#关系运算符"><span class="nav-number">2.6.</span> <span class="nav-text">关系运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#相等运算符"><span class="nav-number">2.7.</span> <span class="nav-text">相等运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#位移运算符"><span class="nav-number">2.8.</span> <span class="nav-text">位移运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二进制位运算符"><span class="nav-number">2.9.</span> <span class="nav-text">二进制位运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#二元逻辑运算符"><span class="nav-number">2.10.</span> <span class="nav-text">二元逻辑运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#条件-三元-运算符"><span class="nav-number">2.11.</span> <span class="nav-text">条件(三元)运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#赋值运算符"><span class="nav-number">2.12.</span> <span class="nav-text">赋值运算符</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#逗号操作符"><span class="nav-number">2.13.</span> <span class="nav-text">逗号操作符</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       

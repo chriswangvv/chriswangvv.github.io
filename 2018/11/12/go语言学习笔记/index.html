@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="基本 源文件非注释第一行指明属于哪个包；每个go应用都包含一个名为main的包  import “包名”;fmt 包实现了格式化 IO（输入/输出）的函数  函数执行顺序：有init()函数则先执行init函数，没有则启动主函数（main()）  当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-30T02:18:09.033Z">
+<meta property="og:updated_time" content="2018-12-06T09:58:56.369Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="go语言学习笔记">
 <meta name="twitter:description" content="基本 源文件非注释第一行指明属于哪个包；每个go应用都包含一个名为main的包  import “包名”;fmt 包实现了格式化 IO（输入/输出）的函数  函数执行顺序：有init()函数则先执行init函数，没有则启动主函数（main()）  当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包">
@@ -352,22 +352,28 @@
 <li><p>当标识符（包括常量、变量、类型、函数名、结构字段等等）以一个大写字母开头时，使用这种形式的标识符的对象能被外部包的代码所使用（客户端程序需要先导入这个包），这被称为导出（相当于public）；标识符以小写字母开头，则只对包内可见可用（相当于protected）</p>
 </li>
 </ol>
-<pre><code>&gt; 注意：
-&gt; 
-&gt; 1. 左大括号不能单独放在一行
-&gt; 
-&gt; 2. 一行代表一个语句结束，不需要分号（如果多个语句写在一行则需要分号：不要这么写）
-&gt; 
-&gt; 3. 第一个字符必须是字母或下划线
-</code></pre><h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
+<blockquote>
+<p>注意：</p>
+<ol>
+<li><p>左大括号不能单独放在一行</p>
+</li>
+<li><p>一行代表一个语句结束，不需要分号（如果多个语句写在一行则需要分号：不要这么写）</p>
+</li>
+<li><p>第一个字符必须是字母或下划线</p>
+</li>
+</ol>
+</blockquote>
+<h4 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h4><ol>
 <li><p>布尔型</p>
 </li>
 <li><p>数字型: 整型：int; 浮点型：float32 float64；（还有一些别的，我感觉暂时用不上）</p>
 </li>
 <li><p>字符串：UTF-8</p>
 <ol>
-<li>由双引号包裹的字符序列。如果用单引号则表示一个字符</li>
-<li>一旦给变量赋值，字符串就不能修改了：在go中字符串是不可变的</li>
+<li><p>由双引号包裹的字符序列。如果用单引号则表示一个字符</p>
+</li>
+<li><p>一旦给变量赋值，字符串就不能修改了：在go中字符串是不可变的</p>
+</li>
 <li><p>例子：</p>
 <pre><code>var s string = &quot;hello&quot;
 s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错，而在c语言中可以
@@ -375,7 +381,9 @@ s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错�
 </ol>
 </li>
 </ol>
-<pre><code>         在go中实现需要这样：
+<pre><code>      在go中实现需要这样：
+
+
          s := &quot;hello&quot;
          c := []byte(s) // 转换为字节数组
          c[0] = &apos;c&apos;// 修改
@@ -383,6 +391,7 @@ s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错�
 
 
 4. 多行字符串
+
     1. 加号连接： 
 
             s := &quot;ttt&quot; + 
@@ -390,7 +399,8 @@ s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错�
 
     2. 反引号包裹，直接换行直接写
 </code></pre><ol start="4">
-<li>派生类型：<ol>
+<li><p>派生类型：</p>
+<ol>
 <li>指针类型（Pointer）</li>
 <li>数组类型</li>
 <li>结构化类型</li>
@@ -402,11 +412,10 @@ s[0] = &apos;c&apos; // 修改第一个字符为 &apos;c&apos; ，这会报错�
 </ol>
 </li>
 </ol>
-<pre><code>&gt; 注意：
-&gt; 完整的整数类型列表（符号和无符号）是 int8, int16, int32, int64 和 byte, uint8, uint16, uint32，uint64.(byte是 uint8 的别名， rune是int32的别名)
-&gt; 还有复数，变量类型是complex128
-&gt; 还有错误，类型叫error。 `var a error`定义了a为一个error，a的值是nil
-</code></pre><h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h5><p>var</p>
+<blockquote>
+<p>注意：<br>完整的整数类型列表（符号和无符号）是 int8, int16, int32, int64 和 byte, uint8, uint16, uint32，uint64.(byte是 uint8 的别名， rune是int32的别名)<br>还有复数，变量类型是complex128<br>还有错误，类型叫error。 <code>var a error</code>定义了a为一个error，a的值是nil</p>
+</blockquote>
+<h4 id="变量"><a href="#变量" class="headerlink" title="变量"></a>变量</h4><h5 id="声明变量"><a href="#声明变量" class="headerlink" title="声明变量"></a>声明变量</h5><p>var</p>
 <ol>
 <li><p>单个：</p>
 <ol>
@@ -448,24 +457,33 @@ arr := [...]int{1:1, 0:2}
 <li><p>所有基本类型（int float bool string）属于值类型</p>
 </li>
 <li><p>&amp;i 来获取变量 i 的内存地址</p>
-</li>
-</ol>
 <blockquote>
 <p>注意： </p>
 <ol>
-<li>这种因式分解关键字的写法一般用于声明全局变量<br>`<br>var (<pre><code>vname1 v_type1
-vname2 v_type2
-</code></pre>  )`</li>
-<li>声明的局部变量必须使用</li>
-<li>全局变量允许声明但不使用</li>
-<li>想要交换两个变量的值，则可以简单地使用 a, b = b, a，两个变量的类型必须是相同。</li>
-<li>空白标识符 _ 也被用于抛弃值，如值 5 在：_, b = 5, 7 中被抛弃。</li>
+<li><p>这种因式分解关键字的写法一般用于声明全局变量</p>
+<p> var (</p>
+<pre><code>     vname1 v_type1
+     vname2 v_type2
+)
+</code></pre></li>
+</ol>
+<ol start="2">
+<li><p>声明的局部变量必须使用</p>
+</li>
+<li><p>全局变量允许声明但不使用</p>
+</li>
+<li><p>想要交换两个变量的值，则可以简单地使用 a, b = b, a，两个变量的类型必须是相同。</p>
+</li>
+<li><p>空白标识符 _ 也被用于抛弃值，如值 5 在：_, b = 5, 7 中被抛弃。</p>
+</li>
 <li><p>_ 实际上是一个只写变量，你不能得到它的值。这样做是因为 Go 语言中你必须使用所有被声明的变量，但有时你并不需要使用从一个函数得到的所有返回值。</p>
 </li>
 <li><p>并行赋值也被用于当一个函数返回多个返回值时，比如这里的 val 和错误 err 是通过调用 Func1 函数同时得到：val, err = Func1(var1)。</p>
 </li>
 </ol>
 </blockquote>
+</li>
+</ol>
 <h4 id="常量"><a href="#常量" class="headerlink" title="常量"></a>常量</h4><h5 id="常量基本用法"><a href="#常量基本用法" class="headerlink" title="常量基本用法"></a>常量基本用法</h5><ol>
 <li><p>声明常量</p>
 <ol>
@@ -524,13 +542,15 @@ func main() {
 </code></pre><h4 id="运算符"><a href="#运算符" class="headerlink" title="运算符"></a>运算符</h4><p>内置的运算符有： 算术运算符 关系运算符 逻辑运算符 位运算符 赋值运算符 其他运算符</p>
 <ol>
 <li><p>优先级（从上往下优先级从高到低）</p>
-<pre><code>1. `* / % &lt;&lt; &gt;&gt; &amp; &amp;^` 
-2. ` + - | ^`
-3. `== != &lt; &lt;= &gt; &gt;=`
-4. `&lt;-`
-5. `&amp;&amp;`
-6. `||`
-</code></pre></li>
+<ol>
+<li><code>* / % &lt;&lt; &gt;&gt; &amp; &amp;^</code> </li>
+<li><code>+ - | ^</code></li>
+<li><code>== != &lt; &lt;= &gt; &gt;=</code></li>
+<li><code>&lt;-</code></li>
+<li><code>&amp;&amp;</code></li>
+<li><code>||</code></li>
+</ol>
+</li>
 <li><p>一些含义：</p>
 <ol>
 <li><code>&amp; | ^ &amp;^</code>: 按位与 按位或 按位异或 位清除</li>
@@ -542,19 +562,15 @@ func main() {
 case defer   go map   structchan elsegoto   package   switch 
 constfallthrough if range type
 continue for  import returnvar
-</code></pre><ol>
-<li>一些含义：<ol>
-<li>go用于并行</li>
-<li>select 用于选择不同类型的通讯</li>
-<li>struct用于抽象数据类型</li>
-</ol>
-</li>
-</ol>
-<h4 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h4><p>没有do或者while循环，只有for。有灵活的switch语句和if。switch接收像for那样可选的初始化语句。还有叫做类型选择和多路通讯转接器的select。无需圆括号，语句体必须总是包含大打括号内。</p>
+</code></pre><p>一些含义：</p>
+<pre><code>1. go用于并行
+2. select 用于选择不同类型的通讯
+3. struct用于抽象数据类型
+</code></pre><h4 id="控制结构"><a href="#控制结构" class="headerlink" title="控制结构"></a>控制结构</h4><p>没有do或者while循环，只有for。有灵活的switch语句和if。switch接收像for那样可选的初始化语句。还有叫做类型选择和多路通讯转接器的select。无需圆括号，语句体必须总是包含大打括号内。</p>
 <ol>
 <li>if else</li>
 <li><p>goto</p>
-<pre><code>        i := 0;
+<pre><code>i := 0;
 Here:
     fmt.Println(i)
     i++
@@ -564,19 +580,19 @@ Here:
 </code></pre></li>
 <li><p>for</p>
 <ol>
-<li><p>for init; confition; post {} // c语言</p>
+<li><p><code>for init; confition; post {}</code> // c语言</p>
 </li>
-<li><p>for condition {} // while</p>
+<li><p><code>for condition {}</code> // while</p>
 </li>
-<li><p>for {}   // c语言的for(;;) 死循环</p>
+<li><p><code>for {}</code>   // c语言的for(;;) 死循环</p>
 </li>
 </ol>
 </li>
 <li><p>break</p>
 <ol>
-<li><p>break</p>
+<li><p><code>break</code></p>
 </li>
-<li><p>break J</p>
+<li><p><code>break J</code></p>
 </li>
 </ol>
 </li>
@@ -727,7 +743,7 @@ print imag    cap   copy    println
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
