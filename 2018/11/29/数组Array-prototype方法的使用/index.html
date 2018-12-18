@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="数组Array.prototype方法的使用  在ES5中，一共有九个Array方法:  Array.prototype.indexOf   Array.prototype.lastIndexOf   Array.prototype.every   Array.prototype.some   Array.prototype.forEach   Array.prototype.map   Arra">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-11-30T09:23:04.188Z">
+<meta property="og:updated_time" content="2018-12-13T09:34:58.093Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组Array.prototype方法的使用">
 <meta name="twitter:description" content="数组Array.prototype方法的使用  在ES5中，一共有九个Array方法:  Array.prototype.indexOf   Array.prototype.lastIndexOf   Array.prototype.every   Array.prototype.some   Array.prototype.forEach   Array.prototype.map   Arra">
@@ -506,11 +506,31 @@ var result = function(){
 </ol>
 </li>
 </ul>
-<pre><code>var res = arr.map(function(item, index, input) {
-    return item * 10
-})
-console.log(res) // [120, 230, 240, 420, 10]
-console.log(arr) // [12, 23, 24, 42, 1]
+<pre><code>            var res = arr.map(function(item, index, input) {
+                return item * 10
+            })
+            console.log(res) // [120, 230, 240, 420, 10]
+            console.log(arr) // [12, 23, 24, 42, 1]
+
+
+
+
+
+/**
+ *         String username = principal.get(&quot;username&quot;);
+ *         String password = principal.get(&quot;password&quot;);
+ *         if (username.isEmpty() || password.isEmpty()) {
+ *             throw new InternalAuthenticationServiceException(&quot;Authentication failure&quot;);
+ *         }
+ *         BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+ *         UserDetails userDetails = this.userDetailsService.loadUserByUsername(username);
+ *         if (userDetails == null || !encoder.matches(password, userDetails.getPassword())) {
+ *             throw new InternalAuthenticationServiceException(&quot;username or password is not correct&quot;);
+ *         }
+ *         UsernamePasswordAuthenticationToken authenticationToken = new UsernamePasswordAuthenticationToken(userDetails, null, userDetails.getAuthorities());
+ *         authenticationToken.setDetails(authentication.getDetails());
+ *         return authenticationToken;
+ *     }
 </code></pre>
       
     </div>
@@ -634,7 +654,7 @@ console.log(arr) // [12, 23, 24, 42, 1]
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">15</span>
+                  <span class="site-state-item-count">17</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -656,7 +676,7 @@ console.log(arr) // [12, 23, 24, 42, 1]
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-count">12</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

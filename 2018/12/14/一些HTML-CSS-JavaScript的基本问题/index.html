@@ -1,0 +1,859 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.ico?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/favicon.ico?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="web, CSS, JavaScript, js, 前端, Angular">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="HTML / XHTML &amp;lt;!DOCTYPE html&amp;gt; 作用：声明文档的解析类型，避免浏览器的怪异模式  如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于开了标准模">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一些HTML CSS JavaScript的基本问题">
+<meta property="og:url" content="http://yoursite.com/2018/12/14/一些HTML-CSS-JavaScript的基本问题/index.html">
+<meta property="og:site_name" content="Chris的博客">
+<meta property="og:description" content="HTML / XHTML &amp;lt;!DOCTYPE html&amp;gt; 作用：声明文档的解析类型，避免浏览器的怪异模式  如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于开了标准模">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-12-14T08:38:18.413Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="一些HTML CSS JavaScript的基本问题">
+<meta name="twitter:description" content="HTML / XHTML &amp;lt;!DOCTYPE html&amp;gt; 作用：声明文档的解析类型，避免浏览器的怪异模式  如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于开了标准模">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/12/14/一些HTML-CSS-JavaScript的基本问题/">
+
+
+
+
+
+  <title>一些HTML CSS JavaScript的基本问题 | Chris的博客</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope="" itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope="" itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">Chris的博客</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">做一个知识驱动的人</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-tags">
+          <a href="/tags/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-tags"></i> <br>
+            
+            标签
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            分类
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope="" itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/一些HTML-CSS-JavaScript的基本问题/">
+
+    <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Chris">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope="" itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Chris的博客">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">一些HTML CSS JavaScript的基本问题</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T09:44:46+08:00">
+                2018-12-14
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="HTML-XHTML"><a href="#HTML-XHTML" class="headerlink" title="HTML / XHTML"></a>HTML / XHTML</h2><ol>
+<li><p>&lt;!DOCTYPE html&gt;</p>
+<pre><code>作用：声明文档的解析类型，避免浏览器的怪异模式
+
+如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于开了标准模式（标准模式的排版和JS运作模式都是以该浏览器支持的最高标准运行）。
+
+必须是HTML文档的第一行
+
+不是HTML标签
+
+每次打开网页，不会每次都访问doctype里声明的网址，只会对声明中出现的网址进行字符串对比，根据对比结果确定渲染模式。（网址里写明是什么模式的DTD）
+
+为什么HTML5不省略&lt;!DOCTYPE html&gt;：因为要兼容HTML4。UA（浏览器标识）认这个。UA实现判断doctype时，publicID和systemID没有只剩&lt;!DOCTYPE html&gt;时，浏览器都把这个归为给标准渲染模式，所以html5就只剩个&lt;!DOCTYPE html&gt;，既简化了写法又兼容以前。
+
+systemId: 外部资源(多半是DTD)的URI（比如严格模式的http...w3c..../strict.dtd）
+
+publicId: systemId已经可以表示任何位置的外部DTD资源了，但是它是直接指向相应的资源，publicId的作用在于其间接性。publicID就相当于一个名字，这个名字代表了一个外部资源。比如，我们规定”W3C HTML 4.01″这个字符串对应”http://www.w3.org/somedir/somefile.dtd”这个资源。那么，publicID=”W3C HTML 4.01″ 和 systemID=”http://www.w3.org/somedir/somefile.dtd”是一样的，二者都引用了http://www.w3.org/somedir/somefile.dtd作为该文档的外部DTD。
+
+总之，二者都是对外部资源的引用，systemID直接引用资源，publicID间接定位外部资源
+
+HTML5 不基于 SGML，因此不需要对 DTD 进行引用，但是需要 doctype 来规范浏览器的行为（让浏览器按照它们应该的方式来运行）；
+
+而 HTML4.01 基于 SGML,所以需要对 DTD 进行引用，才能告知浏览器文档所使用的文档类型
+</code></pre></li>
+<li><p><a href="http://www.cnblogs.com/fullhouse/archive/2011/12/19/2293455.html" target="_blank" rel="noopener">浏览器内核</a></p>
+<ul>
+<li>Trident 内核：IE,MaxThon,TT,The World,360,搜狗浏览器等。[又称 MSHTML]</li>
+<li>Gecko 内核：Netscape6 及以上版本，FF,MozillaSuite/SeaMonkey 等</li>
+<li>Presto 内核：Opera7 及以上。 [Opera 内核原为：Presto，现为：Blink;]</li>
+<li>Webkit 内核：Safari,Chrome 等。 [ Chrome 的：Blink（WebKit 的分支）]</li>
+</ul>
+</li>
+<li><p>HTML5新特性</p>
+<ul>
+<li>绘画canvas， video audio，localstorage sessionstorage，语义化，表单控件， webworker websocket geolocation</li>
+<li>移除了  <ul>
+<li>纯表现的元素</li>
+<li>对可用性产生负面影响的元素：frame及fram相关的元素</li>
+</ul>
+</li>
+<li>新标签的兼容性<ul>
+<li>兼容个屁，不用现代浏览器的人还用什么html5，html4.x不好吗</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>HTML语义化</p>
+<ul>
+<li>用正确的标签做正确的事情。</li>
+<li>html 语义化让页面的内容结构化，结构更清晰，便于对浏览器、搜索引擎解析;</li>
+<li>即使在没有样式 CSS 情况下也以一种文档格式显示，并且是容易阅读的;</li>
+<li>搜索引擎的爬虫也依赖于 HTML 标记来确定上下文和各个关键字的权重，利于 SEO;</li>
+<li>使阅读源代码的人对网站更容易将网站分块，便于阅读维护理解。</li>
+</ul>
+</li>
+<li><p><a href="https://yanhaijing.com/html/2014/12/28/html5-manifest/" target="_blank" rel="noopener">离线缓存</a> 使用方法和工作原理</p>
+<p> 在用户没有与因特网连接时，可以正常访问站点或应用，在用户与因特网连接时，更新用户机器上的缓存文件。</p>
+<p> 原理：HTML5 的离线存储是基于一个新建的.appcache 文件的缓存机制(不是存储技术)，通过这个文件上的解析清单离线存储资源，这些资源就会像 cookie 一样被存储了下来。之后当网络在处于离线状态下时，浏览器会通过被离线存储的数据进行页面展示。</p>
+</li>
+<li><p>浏览器是怎么对 HTML5 的离线储存资源进行管理和加载的呢？</p>
+<ul>
+<li>在线的情况下，浏览器发现 html 头部有 manifest 属性，它会请求 manifest 文件，如果是第一次访问 app，那么浏览器就会根据 manifest 文件的内容下载相应的资源并且进行离线存储。如果已经访问过 app 并且资源已经离线存储了，那么浏览器就会使用离线的资源加载页面，然后浏览器会对比新的 manifest 文件与旧的 manifest 文件，如果文件没有发生改变，就不做任何操作，如果文件改变了，那么就会重新下载文件中的资源并进行离线存储。</li>
+<li>离线的情况下，浏览器就直接使用离线存储的资源</li>
+</ul>
+</li>
+<li><p>cookies sessionStorage localStorage</p>
+<ul>
+<li><p>cookie 是网站为了标示用户身份而储存在用户本地终端（Client Side）上的数据（通常经过加密）</p>
+</li>
+<li><p>cookie 数据始终在同源的 http 请求中携带（即使不需要），记会在浏览器和服务器间来回传递。</p>
+</li>
+<li><p>sessionStorage 和 localStorage 不会自动把数据发给服务器，仅在本地保存。</p>
+</li>
+<li><p>存储大小：</p>
+<ul>
+<li>cookie 数据大小不能超过 4k。</li>
+<li>sessionStorage 和 localStorage 虽然也有存储大小的限制，但比 cookie 大得多，可以达到 5M 或更大。</li>
+</ul>
+</li>
+<li>有效期（生命周期）：<ul>
+<li>localStorage: 存储持久数据，浏览器关闭后数据不丢失除非主动删除数据；</li>
+<li>sessionStorage: 数据在当前浏览器窗口关闭后自动删除。</li>
+<li>cookie: 设置的 cookie 过期时间之前一直有效，即使窗口或浏览器关闭</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>iframe缺点</p>
+<ul>
+<li>iframe 会阻塞主页面的 Onload 事件；</li>
+<li><p>搜索引擎的检索程序无法解读这种页面，不利于 SEO;</p>
+<p>iframe 和主页面共享连接池，而浏览器对相同域的连接有限制，所以会影响页面的并行加载。<br>使用 iframe 之前需要考虑这两个缺点。如果需要使用 iframe，最好是通过 javascript动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题</p>
+</li>
+</ul>
+</li>
+</ol>
+<p>动态给 iframe 添加 src 属性值，这样可以绕开以上两个问题。</p>
+<ol start="9">
+<li><p>label</p>
+<p> 定义表单控制间的关系,当用户选择该标签时，浏览器会自动将焦点转到和标签相关的表单控件上</p>
+</li>
+<li><p>浏览器内多个标签页之间的通信</p>
+<ul>
+<li>websocket shardworker</li>
+<li>localstorage cookies</li>
+</ul>
+<p>localstorge 另一个浏览上下文里被添加、修改或删除时，它都会触发一个事件，</p>
+<p>我们通过监听事件，控制它的值来进行页面信息通信；</p>
+<p>注意 quirks：Safari 在无痕模式下设置 localstorge 值时会抛出 QuotaExceededError 的异常；</p>
+</li>
+<li><p>webSocket兼容低浏览器</p>
+<ul>
+<li>Adobe Flash Socket 、</li>
+<li>ActiveX HTMLFile (IE) 、</li>
+<li>基于 multipart 编码发送 XHR 、</li>
+<li>基于长轮询的 XHR</li>
+</ul>
+</li>
+</ol>
+<ol start="12">
+<li><p>页面可见性Page Visibilite API 用途</p>
+<p>这是html5提供的的一个api，主要作用就是记录当前标签页是否正在被用户浏览。</p>
+<p>监控用户行为。当用户的视角不在当前页面时，暂停加载广告，幻灯片、停止加载视频、开始加载小动画等。减少对用户宽带的占用，减少服务器压力，节省用户内存，以及到达更好的播放效果</p>
+<pre><code>属性：document.visibilityState
+
+事件：document.addEventListener( &quot;visibilitychange&quot; , function(){})
+</code></pre></li>
+</ol>
+<ol start="13">
+<li><p>实现一个圆形可点击区域</p>
+<ul>
+<li>map+area 或者 svg</li>
+<li>border-radius</li>
+<li>纯 js 实现 需要求一个点在不在圆上简单算法、获取鼠标坐标等等</li>
+</ul>
+</li>
+<li><p>title h1,b strong, i em</p>
+<pre><code>Physical Style Elements -- 自然样式标签
+
+b, i, u, s, pre
+
+Semantic Style Elements -- 语义样式标签
+
+strong, em, ins, del, code
+</code></pre><p>应该准确使用语义样式标签, 但不能滥用, 如果不能确定时首选使用自然样式标签。</p>
+</li>
+<li><p>title属性和alt属性的区别</p>
+<p>title是鼠标放上去时出现的，alt是图片不能正常加载时出现的</p>
+</li>
+</ol>
+<hr>
+<h2 id="CSS"><a href="#CSS" class="headerlink" title="CSS"></a>CSS</h2><ol>
+<li>display:none visibility: hidden</li>
+</ol>
+<ol>
+<li><p>css盒模型</p>
+</li>
+<li><p>外边距合并</p>
+<p> 只有普通文档流中块框的垂直外边距才会发生外边距合并。行内框、浮动框或绝对定位之间的外边距不会合并</p>
+</li>
+</ol>
+<p>button ？ a ？</p>
+<p>如果需要跳转到新的页面或更改页面的大部分内容，建议使用<a>元素</a></p>
+<p>否则更建议使用button元素（或者<code>&lt;input type=&quot;button&quot;&gt;</code>）</p>
+<p>:root选择器用匹配文档的根元素。</p>
+<p>在HTML中根元素始终是HTML元素。</p>
+<p>界面展现用户体验和可访问性方向、偏后的js/nodejs开发方向、audio/video音视频富媒体方向、SVG/canvas/webGL动效创意表现与数据可视化方向、工具建设文档管理内部站建设的前端运维方向以及会议预定团建组织对外品牌宣传的前端运营方向。</p>
+<p>感性细腻有设计背景可以专注于用户体验，纯逻辑工程化思维浓郁则更适合偏后开发，数学物理强悍可以考虑数据可视化方向，沟通协调能力很强可以朝着前端运营方向努力</p>
+<p>HTML可访问性，无障碍阅读以及SEO等</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/12/10/一些less的基本用法/" rel="next" title="一些less的基本用法">
+                <i class="fa fa-chevron-left"></i> 一些less的基本用法
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/12/14/CSS的层叠和继承/" rel="prev" title="CSS的层叠和继承">
+                CSS的层叠和继承 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope="" itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Chris</p>
+              <p class="site-description motion-element" itemprop="description">前端小白/Angular</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">17</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-name">分类</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                <a href="/tags/index.html">
+                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-name">标签</span>
+                </a>
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-XHTML"><span class="nav-number">1.</span> <span class="nav-text">HTML / XHTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Chris</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
