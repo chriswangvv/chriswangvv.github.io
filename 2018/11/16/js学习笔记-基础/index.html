@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="全局的对象global objects 或称 标准内置对象全局的对象是说在全局作用域里的对象 tips：不要和 “全局对象（global object）” 混淆 标准内置对象的分类值属性 Infinity NaN undefined null字面量  函数属性全局函数可以直接调用  eval() 避免用吧  eval(string):将传入的字符串当作js代码执行 执行指定代码之后的返回值。如果返">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T01:25:56.678Z">
+<meta property="og:updated_time" content="2019-01-10T08:45:35.673Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="js学习笔记-基础">
 <meta name="twitter:description" content="全局的对象global objects 或称 标准内置对象全局的对象是说在全局作用域里的对象 tips：不要和 “全局对象（global object）” 混淆 标准内置对象的分类值属性 Infinity NaN undefined null字面量  函数属性全局函数可以直接调用  eval() 避免用吧  eval(string):将传入的字符串当作js代码执行 执行指定代码之后的返回值。如果返">
@@ -763,6 +763,15 @@ const containsVowel = str =&gt; [...str].some(isVowel);
 var falg = containsVowel(randomStr); //true
 console.log(falg)
 </code></pre><p>尽量不要使用for循环，可以使用函数式的some等循环，可读性高</p>
+<ol start="19">
+<li><p>charAt() 方法可返回指定位置的字符<br>str = ‘War’<br>str.charAt(0) =&gt; ‘W’</p>
+</li>
+<li><p>连等</p>
+<p>判断3个数连等为什么不能用a ==b ==c</p>
+<p>由于==是从左到右进行运算的,对于表达式 ( a == b == c ),首先会进行 ( a == b )的逻辑运算,然后得出逻辑值1或0,得到的结果作为返回值进行 ( 返回值 == c ) 的逻辑运算,然后得出逻辑值1或0,作为整个表达式的返回值.<br>所以也就是判断 ( ( a == b ) == c )即 ( 1或0 == c ),因此不能这样用.</p>
+</li>
+<li></li>
+</ol>
 
       
     </div>
