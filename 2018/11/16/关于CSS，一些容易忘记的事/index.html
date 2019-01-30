@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="基本 选择器权重 内联样式，如 style = &amp;quot;&amp;quot;,权值为1000 ID选择器，如 #content,权值为100 类、伪类和属性选择器，如 .content,权值为10 类型选择器和伪元素选择器，如 div p,权值为1   优先级 权值相等时，后出现的样式覆盖先出现的样式表设置 创作者的规则高于浏览者 继承的 CSS 样式不如后来指定的 CSS 样式 在同一组属性设置中标">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-01-10T01:26:46.563Z">
+<meta property="og:updated_time" content="2019-01-21T08:02:52.418Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="关于CSS，一些容易忘记的事">
 <meta name="twitter:description" content="基本 选择器权重 内联样式，如 style = &amp;quot;&amp;quot;,权值为1000 ID选择器，如 #content,权值为100 类、伪类和属性选择器，如 .content,权值为10 类型选择器和伪元素选择器，如 div p,权值为1   优先级 权值相等时，后出现的样式覆盖先出现的样式表设置 创作者的规则高于浏览者 继承的 CSS 样式不如后来指定的 CSS 样式 在同一组属性设置中标">
@@ -520,6 +520,15 @@ h2::before {
 </li>
 </ol>
 </li>
+<li><p>裁剪图片</p>
+<p> clip: rect(0px,60px,60px,10px);</p>
+</li>
+<li><p>css 单位 px em rem</p>
+<p>em：相对单位，基准点为父节点字体的大小</p>
+<p>浏览器默认1em=16px，所以0.75em=12px，这样不好算，所以在根元素上写<code>font-size: 62.5%</code>,这样1em = 10px,12px=1.2em</p>
+<p>em会根据父级元素的大小而变化，rem相对于根基元素不被父类影响</p>
+<p>rem chrome/firefox/IE9+支持</p>
+</li>
 </ol>
 
       
@@ -640,7 +649,7 @@ h2::before {
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">21</span>
+                  <span class="site-state-item-count">22</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -651,7 +660,7 @@ h2::before {
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">9</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -662,7 +671,7 @@ h2::before {
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">13</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
