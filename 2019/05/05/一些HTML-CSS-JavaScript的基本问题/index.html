@@ -82,14 +82,18 @@
 <meta name="description" content="持续更新 HTML / XHTML &amp;lt;!DOCTYPE html&amp;gt; 作用：声明文档的解析类型，避免浏览器的怪异模式  如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于">
 <meta property="og:type" content="article">
 <meta property="og:title" content="一些HTML CSS JavaScript的基本问题">
-<meta property="og:url" content="http://yoursite.com/2018/12/14/一些HTML-CSS-JavaScript的基本问题/index.html">
+<meta property="og:url" content="http://yoursite.com/2019/05/05/一些HTML-CSS-JavaScript的基本问题/index.html">
 <meta property="og:site_name" content="Chris的博客">
 <meta property="og:description" content="持续更新 HTML / XHTML &amp;lt;!DOCTYPE html&amp;gt; 作用：声明文档的解析类型，避免浏览器的怪异模式  如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-07-17T00:43:05.656Z">
+<meta property="og:image" content="https://i.imgur.com/0lnXN9B.png">
+<meta property="og:image" content="https://i.imgur.com/oFDGtOf.png">
+<meta property="og:image" content="https://i.imgur.com/w1Sls1i.png">
+<meta property="og:updated_time" content="2019-07-17T00:53:31.354Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="一些HTML CSS JavaScript的基本问题">
 <meta name="twitter:description" content="持续更新 HTML / XHTML &amp;lt;!DOCTYPE html&amp;gt; 作用：声明文档的解析类型，避免浏览器的怪异模式  如果页面没有DOCTYPE声明，那么浏览器会按照自己的方式解析渲染页面，那么，在不同的浏览器就会显示不同的样式。（即默认是兼容模式BackCompat，兼容模式以宽松的向后兼容的方式显示，模拟老式浏览器的行为以防止站点无法工作）；如果添加了DOCTYPE声明，那么就等于">
+<meta name="twitter:image" content="https://i.imgur.com/0lnXN9B.png">
 
 
 
@@ -119,7 +123,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/12/14/一些HTML-CSS-JavaScript的基本问题/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/05/一些HTML-CSS-JavaScript的基本问题/">
 
 
 
@@ -252,7 +256,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/12/14/一些HTML-CSS-JavaScript的基本问题/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/05/一些HTML-CSS-JavaScript的基本问题/">
 
     <span hidden itemprop="author" itemscope="" itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Chris">
@@ -281,8 +285,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-14T09:44:46+08:00">
-                2018-12-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2019-05-05T09:44:46+08:00">
+                2019-05-05
               </time>
             
 
@@ -495,6 +499,82 @@ strong, em, ins, del, code
 <h3 id="miao">
 
 
+<p>———- 2019.5.5 更新 ———</p>
+<p>键值存储，列存储，文档存储，图形存储</p>
+<p>content<br>navigation<br>mask<br>popout</p>
+<p>弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成。</p>
+<p>弹性容器通过设置 display 属性的值为 flex 或 inline-flex将其定义为弹性容器。</p>
+<p>我们将在下面的例子中解释几个问题：</p>
+<ol>
+<li>flex和inline-flex的使用情景和区别</li>
+<li></li>
+</ol>
+<h3 id="flex和inline-flex"><a href="#flex和inline-flex" class="headerlink" title="flex和inline-flex"></a>flex和inline-flex</h3><ol>
+<li>区别就是当你设置<code>display: inline-flex</code>时会同时给这个元素本身（即容器）设置一个<code>display: inline</code>属性</li>
+<li><p><code>display: flex</code></p>
+</li>
+<li><p>设置在容器上：</p>
+<ol start="2">
+<li>flex-direction的值有:<pre><code>row：横向从左到右排列（左对齐），默认的排列方式。
+row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。
+column：纵向排列。
+column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。
+</code></pre></li>
+<li>flex-wrap 属性<pre><code>nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。
+wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行
+wrap-reverse -换行，第一行在下方
+</code></pre></li>
+<li>flex-flow: flex-direction flex-wrap;默认为row nowrap</li>
+<li>justify-content属性（项目在主轴上的对齐方式）<pre><code>flex-start：从左到右排列
+flex-end：从右到左排列
+center：中间开始排列
+space-between：两端对齐，项目之间的间隔都相等
+space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍
+</code></pre></li>
+<li>align-items 属性:侧轴（纵轴）方向上的对齐方式。<pre><code>flex-start： 顶部开始
+flex-end： 低部开始
+center 居中
+baseline 项目的第一行文字的基线对齐
+stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+</code></pre></li>
+<li>align-content 属性： 多根轴线的对齐方式<pre><code>stretch - 默认。各行将会伸展以占用剩余的空间。
+flex-start - 各行向弹性盒容器的起始位置堆叠。 上到下开始
+flex-end - 各行向弹性盒容器的结束位置堆叠。 下到上开始
+center -各行向弹性盒容器的中间位置堆叠。  中间
+space-between -各行在弹性盒容器中平均分布。
+space-around - 各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半
+</code></pre></li>
+</ol>
+</li>
+<li>设置在项目上<ol>
+<li>order 属性：定义项目的排列顺序。数值小的排在前面，默认为0可以为负值</li>
+<li>flex-grow属性：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。  如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。</li>
+<li>flex-shrink属性： （不能为负值）如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。</li>
+<li>flex-basis属性：定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。</li>
+<li>flex属性：flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。</li>
+<li>align-self属性： 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。<br>  flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。<br>  flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。<br>  center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。<br>  baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐。<br>  stretch:如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制。</li>
+</ol>
+</li>
+</ol>
+<h2 id="display"><a href="#display" class="headerlink" title="display"></a>display</h2><ol>
+<li>常用值： inline; inline-block; block; </li>
+<li><p>区别：<img src="https://i.imgur.com/0lnXN9B.png" alt=""></p>
+<blockquote>
+<p>这几个元素都设置了同样的宽高</p>
+</blockquote>
+<ol>
+<li>inline: 行内元素</li>
+<li>inline-block: 行内块级元素</li>
+<li>block: 块级元素(自成一行)</li>
+</ol>
+</li>
+<li>当我们给这三个元素加<code>float</code>属性的时候（注： 属性值不为none）<br> <img src="https://i.imgur.com/oFDGtOf.png" alt=""><br> 让我们看一下代码提示是怎么说的：<br> <img src="https://i.imgur.com/w1Sls1i.png" alt=""><br> 当带<code>inline</code>属性的元素设置了非none的<code>float</code>属性时，这个盒子将会按照设定的<code>float</code>值来浮动，<code>display</code>属性将会按照<code>display: none</code>来显示。</li>
+<li><p>当<code>display</code>的值为<code>flex</code>或<code>inline-flex</code>时，</p>
+  
+<pre><code>// &quot;node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css&quot;,
+</code></pre></li>
+</ol>
+<p><element contenteditable="true|false"><br>可编辑</element></p>
 </h3>
       
     </div>
@@ -519,8 +599,8 @@ strong, em, ins, del, code
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/12/05/一些ES6的基本语法/" rel="next" title="持续更新-ES6笔记">
-                <i class="fa fa-chevron-left"></i> 持续更新-ES6笔记
+              <a href="/2019/04/14/一些前端代码规范/" rel="next" title="一些前端代码规范">
+                <i class="fa fa-chevron-left"></i> 一些前端代码规范
               </a>
             
           </div>
@@ -529,8 +609,8 @@ strong, em, ins, del, code
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/12/14/CSS的层叠和继承/" rel="prev" title="CSS的层叠和继承">
-                CSS的层叠和继承 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/05/13/正则表达式入门/" rel="prev" title="正则表达式入门">
+                正则表达式入门 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -666,7 +746,83 @@ strong, em, ins, del, code
               <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#HTML-XHTML"><span class="nav-number">1.</span> <span class="nav-text">HTML / XHTML</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CSS"><span class="nav-number">2.</span> <span class="nav-text">CSS</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#miao"><span class="nav-number">2.1.</span> <span class="nav-text">
 
 
-</span></a></li></ol></li></ol></div>
+———- 2019.5.5 更新 ———
+键值存储，列存储，文档存储，图形存储
+contentnavigationmaskpopout
+弹性盒子由弹性容器(Flex container)和弹性子元素(Flex item)组成。
+弹性容器通过设置 display 属性的值为 flex 或 inline-flex将其定义为弹性容器。
+我们将在下面的例子中解释几个问题：
+
+flex和inline-flex的使用情景和区别
+
+
+flex和inline-flex
+区别就是当你设置display: inline-flex时会同时给这个元素本身（即容器）设置一个display: inline属性
+display: flex
+
+设置在容器上：
+
+flex-direction的值有:row：横向从左到右排列（左对齐），默认的排列方式。
+row-reverse：反转横向排列（右对齐，从后往前排，最后一项排在最前面。
+column：纵向排列。
+column-reverse：反转纵向排列，从后往前排，最后一项排在最上面。
+
+flex-wrap 属性nowrap - 默认， 弹性容器为单行。该情况下弹性子项可能会溢出容器。
+wrap - 弹性容器为多行。该情况下弹性子项溢出的部分会被放置到新行，子项内部会发生断行
+wrap-reverse -换行，第一行在下方
+
+flex-flow: flex-direction flex-wrap;默认为row nowrap
+justify-content属性（项目在主轴上的对齐方式）flex-start：从左到右排列
+flex-end：从右到左排列
+center：中间开始排列
+space-between：两端对齐，项目之间的间隔都相等
+space-around：每个项目两侧的间隔相等。所以，项目之间的间隔比项目与边框的间隔大一倍
+
+align-items 属性:侧轴（纵轴）方向上的对齐方式。flex-start： 顶部开始
+flex-end： 低部开始
+center 居中
+baseline 项目的第一行文字的基线对齐
+stretch（默认值）：如果项目未设置高度或设为auto，将占满整个容器的高度。
+
+align-content 属性： 多根轴线的对齐方式stretch - 默认。各行将会伸展以占用剩余的空间。
+flex-start - 各行向弹性盒容器的起始位置堆叠。 上到下开始
+flex-end - 各行向弹性盒容器的结束位置堆叠。 下到上开始
+center -各行向弹性盒容器的中间位置堆叠。  中间
+space-between -各行在弹性盒容器中平均分布。
+space-around - 各行在弹性盒容器中平均分布，两端保留子元素与子元素之间间距大小的一半
+
+
+
+设置在项目上
+order 属性：定义项目的排列顺序。数值小的排在前面，默认为0可以为负值
+flex-grow属性：定义项目的放大比例，默认为0，即如果存在剩余空间，也不放大。  如果所有项目的flex-grow属性都为1，则它们将等分剩余空间（如果有的话）。如果一个项目的flex-grow属性为2，其他项目都为1，则前者占据的剩余空间将比其他项多一倍。
+flex-shrink属性： （不能为负值）如果所有项目的flex-shrink属性都为1，当空间不足时，都将等比例缩小。如果一个项目的flex-shrink属性为0，其他项目都为1，则空间不足时，前者不缩小。
+flex-basis属性：定义了在分配多余空间之前，项目占据的主轴空间（main size）。浏览器根据这个属性，计算主轴是否有多余空间。它的默认值为auto，即项目的本来大小。它可以设为跟width或height属性一样的值（比如350px），则项目将占据固定空间。
+flex属性：flex-grow, flex-shrink 和 flex-basis的简写，默认值为0 1 auto。后两个属性可选。
+align-self属性： 属性允许单个项目有与其他项目不一样的对齐方式，可覆盖align-items属性。默认值为auto，表示继承父元素的align-items属性，如果没有父元素，则等同于stretch。  flex-start：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴起始边界。  flex-end：弹性盒子元素的侧轴（纵轴）起始位置的边界紧靠住该行的侧轴结束边界。  center：弹性盒子元素在该行的侧轴（纵轴）上居中放置。（如果该行的尺寸小于弹性盒子元素的尺寸，则会向两个方向溢出相同的长度）。  baseline：如弹性盒子元素的行内轴与侧轴为同一条，则该值与’flex-start’等效。其它情况下，该值将参与基线对齐。  stretch:如果指定侧轴大小的属性值为’auto’，则其值会使项目的边距盒的尺寸尽可能接近所在行的尺寸，但同时会遵照’min/max-width/height’属性的限制。
+
+
+
+display
+常用值： inline; inline-block; block; 
+区别：
+
+这几个元素都设置了同样的宽高
+
+
+inline: 行内元素
+inline-block: 行内块级元素
+block: 块级元素(自成一行)
+
+
+当我们给这三个元素加float属性的时候（注： 属性值不为none）  让我们看一下代码提示是怎么说的：  当带inline属性的元素设置了非none的float属性时，这个盒子将会按照设定的float值来浮动，display属性将会按照display: none来显示。
+当display的值为flex或inline-flex时，
+  
+// &quot;node_modules/ng-zorro-antd/src/ng-zorro-antd.min.css&quot;,
+
+
+可编辑
+</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#flex和inline-flex"><span class="nav-number">2.2.</span> <span class="nav-text">flex和inline-flex</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#display"><span class="nav-number">3.</span> <span class="nav-text">display</span></a></li></ol></div>
             
 
           </div>
